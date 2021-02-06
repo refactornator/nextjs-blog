@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import styles from './layout.module.css'
 
 const Container = styled.div`
   max-width: 36rem;
