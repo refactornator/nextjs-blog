@@ -1,4 +1,4 @@
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 import Footer from '../components/Footer'
 import Header from '../components/Header'
@@ -40,14 +40,35 @@ const theme = {
   },
 }
 
+const Main = styled.main`
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+`
+
+const Content = styled.section`
+  width: 100%;
+  flex: 1 0 auto;
+  margin-top: 120px;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  max-width: 42rem;
+  padding: 1.05rem 0.35rem;
+`
+
 export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <Header height={120} />
-        <Component {...pageProps} />
-        <Footer />
+        <Main>
+          <Header height={120} />
+          <Content>
+            <Component {...pageProps} />
+          </Content>
+          <Footer />
+        </Main>
       </ThemeProvider>
     </>
   )
