@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useState, useEffect } from 'react'
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 import Footer from '../components/Footer'
@@ -58,17 +59,33 @@ const Content = styled.section`
   padding: 1.05rem 0.35rem;
 `
 
+export const siteTitle = "William Lindner's Blog, 2 n's"
+
 export default function App({ Component, pageProps }) {
+  const [scrolled, setScrolled] = useState(false)
+
+  const handleScroll = () => {
+    setScrolled(window.scrollY > 40)
+  }
+
+  useEffect(() => {
+    addEventListener('scroll', handleScroll)
+    return () => {
+      removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
     <>
       <Head>
+        <title>{siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="William Lindner's Blog, 2 n's" />
+        <meta name="description" content={siteTitle} />
       </Head>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Main>
-          <Header height={120} />
+          <Header height={scrolled ? 60 : 120} />
           <Content>
             <Component {...pageProps} />
           </Content>

@@ -1,10 +1,9 @@
 import { useState } from 'react'
-import Head from 'next/head'
 import Link from 'next/link'
 import styled from 'styled-components'
 
 import Date from '../components/Date'
-import Layout, { siteTitle } from '../components/Layout'
+import Layout from '../components/Layout'
 
 import { getSortedPostsData } from '../lib/posts'
 
@@ -51,9 +50,6 @@ export default function Home({ allPostsData }) {
 
   return (
     <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
       <Summary>
         <Content>
           <Title>Welcome to William's website.</Title>

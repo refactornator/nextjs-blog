@@ -1,30 +1,28 @@
-import Head from 'next/head'
 import Link from 'next/link'
+import styled from 'styled-components'
 import styles from './layout.module.css'
 
-export const siteTitle = "William Lindner's Blog, 2 n's"
+const Container = styled.div`
+  max-width: 36rem;
+  padding: 0 1rem;
+  margin: 3rem auto 6rem;
+`
+
+const BackToHome = styled.div`
+  margin: 3rem 0 0;
+`
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
-      <Head>
-        <meta
-          property="og:image"
-          content={`https://og-image.now.sh/${encodeURI(
-            siteTitle
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
-        <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+    <Container>
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
+        <BackToHome>
           <Link href="/">
             <a>← Back to home</a>
           </Link>
-        </div>
+        </BackToHome>
       )}
-    </div>
+    </Container>
   )
 }
