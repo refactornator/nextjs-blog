@@ -1,10 +1,10 @@
 {
-  "name": "learn-starter",
-  "version": "0.1.0",
-  "private": true,
+  "name": "blog",
+  "description": "William Lindner's Blog",
+  "author": "William Lindner <wlindner522@gmail.com>",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start"
   },
   "dependencies": {
@@ -22,5 +22,10 @@
   "devDependencies": {
     "babel-plugin-styled-components": "^1.12.0",
     "prettier": "2.2.1"
+  },
+  "homepage": "https://william.cool",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williamdotcool/nextjs-blog.git"
   }
 }
