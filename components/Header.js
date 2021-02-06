@@ -76,7 +76,11 @@ const Header = () => {
           </Link>
         </NavItem>
         <NavItem square={!scrolled} round>
-          <a target="_blank" href="https://github.com/williamdotcool">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/williamdotcool"
+          >
             <GitHubIcon fontSize="large" />
           </a>
         </NavItem>

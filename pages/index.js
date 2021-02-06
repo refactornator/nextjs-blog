@@ -76,7 +76,11 @@ export default function Home() {
           </p>
           <p>
             I sometimes write code on{' '}
-            <a target="_blank" href="https://github.com/williamdotcool">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://github.com/williamdotcool"
+            >
               Github
             </a>
             .
