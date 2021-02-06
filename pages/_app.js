@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 import Footer from '../components/Footer'
@@ -60,6 +61,10 @@ const Content = styled.section`
 export default function App({ Component, pageProps }) {
   return (
     <>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="William Lindner's Blog, 2 n's" />
+      </Head>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Main>
