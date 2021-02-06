@@ -2,9 +2,8 @@ import Link from 'next/link'
 import styled from 'styled-components'
 
 const Container = styled.div`
-  max-width: 36rem;
-  padding: 0 1rem;
-  margin: 3rem auto 6rem;
+  max-width: 840px;
+  margin: 40px auto;
 `
 
 const BackToHome = styled.div`

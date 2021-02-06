@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Date from '../../components/Date'
 import Layout from '../../components/Layout'
 
-import { getAllPostIds, getPostData } from '../../lib/posts'
+import { getAllEssayIds, getEssayData } from '../../lib/essays'
 
 const Title = styled.h1`
   font-size: 2rem;
@@ -19,34 +19,34 @@ const LightText = styled.div`
 `
 
 export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id)
+  const essayData = await getEssayData(params.id)
   return {
     props: {
-      postData,
+      essayData,
     },
   }
 }
 
 export async function getStaticPaths() {
-  const paths = getAllPostIds()
+  const paths = getAllEssayIds()
   return {
     paths,
     fallback: false,
   }
 }
 
-export default function Post({ postData }) {
+export default function Essay({ essayData }) {
   return (
     <Layout>
       <Head>
-        <title>{postData.title}</title>
+        <title>{essayData.title}</title>
       </Head>
       <article>
-        <Title>{postData.title}</Title>
+        <Title>{essayData.title}</Title>
         <LightText>
-          <Date dateString={postData.date} />
+          <Date dateString={essayData.date} />
         </LightText>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div dangerouslySetInnerHTML={{ __html: essayData.contentHtml }} />
       </article>
     </Layout>
   )

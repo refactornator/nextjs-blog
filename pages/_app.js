@@ -6,7 +6,9 @@ import Header from '../components/Header'
 
 const GlobalStyle = createGlobalStyle`
   html,
-  body {
+  body,
+  #__next {
+    height: 100%;
     padding: 0;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -14,6 +16,10 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.6;
     font-size: 18px;
     background-color: #f7f7f7;
+  }
+
+  html {
+    overflow-y: scroll;
   }
 
   * {
@@ -51,11 +57,6 @@ const Content = styled.section`
   width: 100%;
   flex: 1 0 auto;
   margin-top: 120px;
-  margin-right: auto;
-  margin-bottom: auto;
-  margin-left: auto;
-  max-width: 42rem;
-  padding: 1.05rem 0.35rem;
 `
 
 export const siteTitle = "William Lindner's Blog, 2 n's"

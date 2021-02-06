@@ -2,12 +2,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 
-import Date from '../components/Date'
 import Layout from '../components/Layout'
-
-import { getSortedPostsData } from '../lib/posts'
-
-import utilStyles from '../styles/utils.module.css'
 
 const Summary = styled.div`
   display: flex;
@@ -27,17 +22,19 @@ const Content = styled.div`
 
 const Title = styled.h1`
   width: 100%;
-  font-weight: bold;
-  font-size: 100%;
-  margin-bottom: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
 `
 
 const SubTitle = styled.h2`
   width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
   font-size: 100%;
+  font-weight: normal;
 `
 
-export default function Home({ allPostsData }) {
+export default function Home() {
   const [dialogOpen, setDialogOpen] = useState(false)
 
   const handleOpen = () => {
@@ -56,23 +53,23 @@ export default function Home({ allPostsData }) {
           <SubTitle>A place to share my thoughts.</SubTitle>
           <p>
             I live in{' '}
-            <Link href="/posts/moving-to-san-francisco">
+            <Link href="/essays/moving-to-san-francisco">
               <a>San Francisco</a>
             </Link>
             . I really enjoy{' '}
-            <Link href="/posts/holotropic-breathwork">
+            <Link href="/essays/holotropic-breathwork">
               <a>Holotropic Breathwork</a>
             </Link>
             , Improv, and{' '}
-            <Link href="/posts/lessons-learned-kickboxing">
+            <Link href="/essays/lessons-learned-kickboxing">
               <a>Kickboxing</a>
             </Link>
             . I do software consulting at{' '}
-            <Link href="/posts/my-first-two-years-at-pivotal">
+            <Link href="/essays/my-first-two-years-at-pivotal">
               <a>VMware Tanzu Labs</a>
             </Link>
             . One time I{' '}
-            <Link href="/posts/learning-elixir">
+            <Link href="/essays/learning-elixir">
               <a>learned Elixir</a>
             </Link>
             .
@@ -85,7 +82,11 @@ export default function Home({ allPostsData }) {
             .
           </p>
           <p>
-            Check out my <Link href="/essays">essays</Link>.
+            Check out my{' '}
+            <Link href="/essays">
+              <a>essays</a>
+            </Link>
+            .
           </p>
           <p style={{ color: '#366ddc' }}>
             <a href="#" onClick={handleOpen}>
@@ -101,31 +102,6 @@ export default function Home({ allPostsData }) {
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         />
       </Summary>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
-      </section>
     </Layout>
   )
-}
-
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
-  return {
-    props: {
-      allPostsData,
-    },
-  }
 }
