@@ -16,38 +16,34 @@ const Background = styled.header`
   justify-content: center;
   background-color: #829fd9;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-
-  a {
-    font-weight: bold;
-    text-decoration: none;
-  }
 `
 
-const Links = styled.div`
+const Nav = styled.nav`
   z-index: 1;
-  width: 100%;
+  width: 50%;
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-around;
+`
+
+const NavItem = styled.div`
+  display: flex;
+  align-items: center;
   justify-content: center;
-  background-color: transparent;
-`
+  padding: 0 6px;
+  min-height: 60px;
+  min-width: 60px;
 
-const MenuItem = styled.h1`
-  margin: auto;
-  padding: 2px 6px;
-  text-align: center;
-`
+  font-size: 36px;
+  font-weight: bolder;
+  background-color: #f99645;
+  border-radius: ${({ borderRadius }) => borderRadius || '50%'};
 
-const linkStyle = {
-  fontSize: 22,
-  color: 'white',
-  margin: '0 16px',
-  minWidth: '48px',
-  minHeight: '48px',
-  fontWeight: 'bolder',
-  backgroundColor: '#f99645',
-}
+  a {
+    color: white;
+  }
+`
 
 const Header = ({ height }) => {
   const [animate, setAnimate] = useState(false)
@@ -58,23 +54,22 @@ const Header = ({ height }) => {
       onMouseOver={() => setAnimate(true)}
       onMouseOut={() => setAnimate(false)}
     >
-      <Links>
-        <Link href="/">
-          <MenuItem>Home</MenuItem>
-        </Link>
-        <a
-          target="_blank"
-          style={{
-            ...linkStyle,
-            borderRadius: '50%',
-          }}
-          href="https://github.com/williamdotcool"
-        >
-          <MenuItem>
-            <GitHubIcon fontSize="default" />
-          </MenuItem>
-        </a>
-      </Links>
+      <Nav>
+        <NavItem borderRadius="10px">
+          <Link href="/">
+            <a>Home</a>
+          </Link>
+        </NavItem>
+        <NavItem>
+          <a
+            borderRadius="50%"
+            target="_blank"
+            href="https://github.com/williamdotcool"
+          >
+            <GitHubIcon fontSize="large" />
+          </a>
+        </NavItem>
+      </Nav>
       <AnimatedShapes animate={animate} />
     </Background>
   )
