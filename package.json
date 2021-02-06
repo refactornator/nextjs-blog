@@ -4,13 +4,15 @@
   "author": "William Lindner <wlindner522@gmail.com>",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
+    "axios": "^0.21.1",
     "date-fns": "^2.17.0",
+    "faunadb": "^4.0.3",
     "gray-matter": "^4.0.2",
     "next": "^10.0.6",
     "react": "17.0.1",
@@ -18,9 +20,11 @@
     "remark": "^13.0.0",
     "remark-html": "^13.0.1",
     "sharp": "^0.27.1",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "swr": "^0.4.1"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^2.0.0",
     "babel-plugin-styled-components": "^1.12.0",
     "prettier": "2.2.1"
   },

@@ -37,7 +37,7 @@ export async function getStaticPaths() {
 
 export default function Essay({ essayData }) {
   return (
-    <Layout>
+    <Layout essay>
       <Head>
         <title>{essayData.title}</title>
       </Head>
