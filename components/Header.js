@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 import GitHubIcon from '@material-ui/icons/GitHub'
@@ -31,41 +31,52 @@ const NavItem = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 6px;
+  transition: border-radius 0.5s ease;
+  padding: ${({ round }) => (round ? '0' : '0 10px')};
   min-height: 60px;
   min-width: 60px;
 
   font-size: 36px;
   font-weight: bolder;
   background-color: #f99645;
-  border-radius: ${({ borderRadius }) => borderRadius || '50%'};
+  border-radius: ${({ square, round }) =>
+    square ? (round ? '50%' : '10px') : '0'};
 
   a {
     color: white;
+    display: flex;
   }
 `
 
-const Header = ({ height }) => {
+const Header = () => {
   const [animate, setAnimate] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  const handleScroll = () => {
+    setScrolled(window.scrollY > 40)
+  }
+
+  useEffect(() => {
+    addEventListener('scroll', handleScroll)
+    return () => {
+      removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
     <Background
-      height={height}
+      height={scrolled ? 60 : 120}
       onMouseOver={() => setAnimate(true)}
       onMouseOut={() => setAnimate(false)}
     >
       <Nav>
-        <NavItem borderRadius="10px">
+        <NavItem square={!scrolled}>
           <Link href="/">
             <a>Home</a>
           </Link>
         </NavItem>
-        <NavItem>
-          <a
-            borderRadius="50%"
-            target="_blank"
-            href="https://github.com/williamdotcool"
-          >
+        <NavItem square={!scrolled} round>
+          <a target="_blank" href="https://github.com/williamdotcool">
             <GitHubIcon fontSize="large" />
           </a>
         </NavItem>
