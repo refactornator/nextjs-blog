@@ -3,6 +3,7 @@ import Link from 'next/link'
 import styled from 'styled-components'
 
 import Layout from '../components/Layout'
+import MessageDialog from '../components/MessageDialog'
 
 const Summary = styled.div`
   display: flex;
@@ -106,6 +107,7 @@ export default function Home() {
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         />
       </Summary>
+      <MessageDialog onClose={handleClose} open={dialogOpen} />
     </Layout>
   )
 }

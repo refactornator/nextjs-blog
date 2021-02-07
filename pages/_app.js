@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    overflow-y: scroll;
+    overflow-y: scroll!important;
   }
 
   * {
