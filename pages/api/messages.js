@@ -2,7 +2,7 @@ import url from 'url'
 import axios from 'axios'
 import faunadb, { query as q } from 'faunadb'
 
-const getLocationData = async ipAddress => {
+const getLocationData = async (ipAddress) => {
   if (ipAddress && ipAddress !== '::1') {
     const response = await axios.get(`https://ipapi.co/${ipAddress}/json/`)
     const {
@@ -39,7 +39,7 @@ module.exports = async (req, res) => {
   switch (req.method) {
     case 'POST':
       try {
-        const { 'x-real-ip': ipAddress } = req.headers
+        const { 'client-ip': ipAddress } = req.headers
         const locationData = await getLocationData(ipAddress)
 
         const response = await client.query(

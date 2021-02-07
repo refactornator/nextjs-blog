@@ -55,7 +55,7 @@ module.exports = async (req, res) => {
       }
     case 'POST':
       try {
-        const { 'x-real-ip': ipAddress } = req.headers
+        const { 'client-ip': ipAddress } = req.headers
         const locationData = await getLocationData(ipAddress)
 
         const response = await client.query(
