@@ -99,12 +99,11 @@ export default function Home() {
             </a>
           </p>
         </Content>
-        <iframe
-          width="265"
+        <video
+          controls
+          width="266"
           height="470"
-          src="https://www.youtube-nocookie.com/embed/D4O-JSXoUL8?modestbranding=1&controls=0&playsinline=1&loop=1&playlist=D4O-JSXoUL8&autoplay=1"
-          frameBorder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          src={require('../videos/intro.mp4')}
         />
       </Summary>
       <MessageDialog onClose={handleClose} open={dialogOpen} />

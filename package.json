@@ -15,6 +15,7 @@
     "faunadb": "^4.0.3",
     "gray-matter": "^4.0.2",
     "next": "^10.0.6",
+    "next-videos": "^1.4.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "remark": "^13.0.0",
