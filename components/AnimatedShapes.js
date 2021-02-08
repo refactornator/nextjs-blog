@@ -25,14 +25,6 @@ const Svg = styled.svg`
         props.animate ? 'running' : 'paused'};
     }
   }
-
-  @media (max-width: 400px) {
-    circle,
-    line,
-    path {
-      animation-play-state: running;
-    }
-  }
 `
 
 const AnimatedCircle = styled.circle`
@@ -127,28 +119,28 @@ const AnimatedShapes = ({ animate }) => {
           height="120"
           patternUnits="userSpaceOnUse"
         >
-          <AnimatedCircle r={14} cx={24} cy={10} duration={2000} />
-          <AnimatedCircle r={16} cx={40} cy={100} duration={1500} />
-          <AnimatedCircle r={18} cx={210} cy={70} duration={3000} />
+          <AnimatedCircle r={14} cx={24} cy={10} duration={4000} />
+          <AnimatedCircle r={16} cx={40} cy={100} duration={3000} />
+          <AnimatedCircle r={18} cx={210} cy={70} duration={6000} />
           <AnimatedStepPath
             d={constructStepPath(60, 20, 10)}
             dashArray={240}
-            duration={4000}
+            duration={8000}
           />
           <AnimatedSquigglyPath
             d={constructSquigglyPath(45, 60, 120, 10)}
             dashArray={80}
-            duration={3500}
+            duration={7000}
           />
           <AnimatedSquigglyPath
             d={constructSquigglyPath(160, 100, 120, 20)}
             dashArray={20}
-            duration={4000}
+            duration={8000}
           />
-          <AnimatedCross size={12} x={210} y={10} duration={5000} />
-          <AnimatedCross size={20} x={130} y={16} duration={4500} />
-          <AnimatedCross size={16} x={80} y={90} duration={5500} />
-          <AnimatedCross size={14} x={16} y={50} duration={5000} />
+          <AnimatedCross size={12} x={210} y={10} duration={10000} />
+          <AnimatedCross size={20} x={130} y={16} duration={9000} />
+          <AnimatedCross size={16} x={80} y={90} duration={11000} />
+          <AnimatedCross size={14} x={16} y={50} duration={10000} />
         </pattern>
       </defs>
       <rect width="100%" height="100%" fill="url(#shapes)" />

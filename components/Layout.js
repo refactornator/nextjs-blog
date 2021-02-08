@@ -5,7 +5,8 @@ import LikeButton from './LikeButton'
 
 const Container = styled.div`
   max-width: 840px;
-  margin: 40px auto;
+  margin: 14px auto;
+  padding: 0 8px;
 `
 
 const EssayFooter = styled.div`

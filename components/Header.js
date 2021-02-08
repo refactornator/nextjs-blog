@@ -21,7 +21,6 @@ const Background = styled.header`
 const Nav = styled.nav`
   z-index: 1;
   width: 50%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -49,7 +48,6 @@ const NavItem = styled.div`
 `
 
 const Header = () => {
-  const [animate, setAnimate] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
   const handleScroll = () => {
@@ -64,11 +62,7 @@ const Header = () => {
   }, [])
 
   return (
-    <Background
-      height={scrolled ? 60 : 120}
-      onMouseOver={() => setAnimate(true)}
-      onMouseOut={() => setAnimate(false)}
-    >
+    <Background height={scrolled ? 60 : 120}>
       <Nav>
         <NavItem square={!scrolled}>
           <Link href="/">
@@ -85,7 +79,7 @@ const Header = () => {
           </a>
         </NavItem>
       </Nav>
-      <AnimatedShapes animate={animate} />
+      <AnimatedShapes animate={!scrolled} />
     </Background>
   )
 }
