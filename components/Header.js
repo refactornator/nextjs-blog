@@ -31,9 +31,7 @@ const NavItem = styled.div`
   align-items: center;
   justify-content: center;
   transition: border-radius 0.5s ease;
-  padding: ${({ round }) => (round ? '0' : '0 10px')};
-  min-height: 60px;
-  min-width: 60px;
+  padding: ${({ round }) => (round ? '10px' : '0 10px')};
 
   font-size: 36px;
   font-weight: bolder;
@@ -64,12 +62,12 @@ const Header = () => {
   return (
     <Background height={scrolled ? 60 : 120}>
       <Nav>
-        <NavItem square={!scrolled}>
+        <NavItem square={!scrolled} style={{ height: 60 }}>
           <Link href="/">
             <a>Home</a>
           </Link>
         </NavItem>
-        <NavItem square={!scrolled} round>
+        <NavItem square={!scrolled} round style={{ width: 60, height: 60 }}>
           <a
             target="_blank"
             rel="noreferrer"
