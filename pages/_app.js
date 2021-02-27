@@ -1,4 +1,7 @@
 import Head from 'next/head'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
+import * as ackeeTracker from 'ackee-tracker'
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 import Footer from '../components/Footer'
@@ -59,9 +62,30 @@ const Content = styled.section`
   margin-top: 120px;
 `
 
+const recordAnalytics = () => {
+  ackeeTracker
+    .create('https://sad-dijkstra-e51d59.netlify.app', {
+      detailed: true,
+      ignoreOwnVisits: false,
+      ignoreLocalhost: false,
+    })
+    .record('3beb9636-d60f-451d-901d-79bba4e9fc54')
+}
+
 export const siteTitle = "William Lindner's Blog, 2 n's"
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter()
+
+  useEffect(() => {
+    recordAnalytics()
+
+    router.events.on('routeChangeStart', recordAnalytics)
+    return () => {
+      router.events.off('routeChangeStart', recordAnalytics)
+    }
+  }, [])
+
   return (
     <>
       <Head>
