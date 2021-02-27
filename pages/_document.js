@@ -40,6 +40,7 @@ export default class MyDocument extends Document {
             src="https://sad-dijkstra-e51d59.netlify.app/tracker.js"
             data-ackee-server="https://sad-dijkstra-e51d59.netlify.app"
             data-ackee-domain-id="3beb9636-d60f-451d-901d-79bba4e9fc54"
+            data-ackee-opts='{ "ignoreOwnVisits": false }'
           ></script>
         </body>
       </Html>
