@@ -62,25 +62,26 @@ const Content = styled.section`
   margin-top: 120px;
 `
 
-const recordAnalytics = () => {
-  ackeeTracker
-    .create('https://sad-dijkstra-e51d59.netlify.app', {
-      detailed: true,
-    })
-    .record('adf384d5-589a-46ae-abdf-8e7958db6565')
-}
-
 export const siteTitle = "William Lindner's Blog, 2 n's"
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()
 
   useEffect(() => {
-    recordAnalytics()
+    let ackee
+    if (router.isReady) {
+      ackee = ackeeTracker.create('https://sad-dijkstra-e51d59.netlify.app', {
+        detailed: true,
+      })
+    }
 
-    router.events.on('routeChangeStart', recordAnalytics)
+    router.events.on('routeChangeComplete', () => {
+      if (ackee) {
+        ackee.record('adf384d5-589a-46ae-abdf-8e7958db6565')
+      }
+    })
     return () => {
-      router.events.off('routeChangeStart', recordAnalytics)
+      router.events.off('routeChangeComplete')
     }
   }, [])
 
