@@ -66,10 +66,8 @@ const recordAnalytics = () => {
   ackeeTracker
     .create('https://sad-dijkstra-e51d59.netlify.app', {
       detailed: true,
-      ignoreOwnVisits: false,
-      ignoreLocalhost: false,
     })
-    .record('3beb9636-d60f-451d-901d-79bba4e9fc54')
+    .record('adf384d5-589a-46ae-abdf-8e7958db6565')
 }
 
 export const siteTitle = "William Lindner's Blog, 2 n's"
