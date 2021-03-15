@@ -1,2 +1,8 @@
 User-agent: *
-Disallow:
+Disallow: /api/*
+Disallow: /poco/*
+Disallow: /_matrix/*
+Disallow: /.netlify/*
+Disallow: /.well-known/*
+Disallow: /siteinfo.json
+Disallow: /statistics.json
