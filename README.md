@@ -2,4 +2,4 @@
 
 This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 
-WOOHOO! It works now
+Let's see it work
