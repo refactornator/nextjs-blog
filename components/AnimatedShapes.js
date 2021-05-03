@@ -15,15 +15,7 @@ const Svg = styled.svg`
   path {
     fill: none;
     stroke: #ced1d6;
-  }
-
-  @media (min-width: 400px) {
-    circle,
-    line,
-    path {
-      animation-play-state: ${(props) =>
-        props.animate ? 'running' : 'paused'};
-    }
+    animation-play-state: ${({ animate }) => (animate ? 'running' : 'paused')};
   }
 `
 
