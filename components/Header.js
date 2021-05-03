@@ -1,49 +1,43 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import styled from 'styled-components'
-import GitHubIcon from '@material-ui/icons/GitHub'
+import { Center, Link as ChakraLink, HStack } from '@chakra-ui/react'
+import { FaGithub } from 'react-icons/fa'
 
 import AnimatedShapes from './AnimatedShapes'
 
-const Background = styled.header`
-  top: 0;
-  width: 100%;
-  height: ${({ height }) => height || 120}px;
-  transition: height 0.5s ease;
-  display: flex;
-  position: fixed;
-  align-items: center;
-  justify-content: center;
-  background-color: #829fd9;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-`
-
-const Nav = styled.nav`
-  z-index: 1;
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-`
-
-const NavItem = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: border-radius 0.5s ease;
-  padding: ${({ round }) => (round ? '10px' : '0 10px')};
-
-  font-size: 36px;
-  font-weight: bolder;
-  background-color: #f99645;
-  border-radius: ${({ square, round }) =>
-    square ? (round ? '50%' : '10px') : '0'};
-
-  a {
-    color: white;
-    display: flex;
-  }
-`
+const NavItem = ({ children, href, external, square }) => {
+  return (
+    <Link href={href}>
+      <ChakraLink
+        href={href}
+        color="#829fd9"
+        fontSize="4xl"
+        fontWeight="bolder"
+        isExternal={external}
+      >
+        <Center
+          p="10px"
+          bg="#ffb83f"
+          borderRadius={square ? '0' : '10px'}
+          height="60px"
+          width="120px"
+          boxShadow="xl"
+          transition="all 0.5s ease"
+          _hover={{
+            background: 'white',
+          }}
+          _active={{
+            transition: 'background 0.0s',
+            background: '#ffb83f',
+            boxShadow: 'md',
+          }}
+        >
+          {children}
+        </Center>
+      </ChakraLink>
+    </Link>
+  )
+}
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false)
@@ -60,25 +54,29 @@ const Header = () => {
   }, [])
 
   return (
-    <Background height={scrolled ? 60 : 120}>
-      <Nav>
-        <NavItem square={!scrolled} style={{ height: 60 }}>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
+    <Center
+      top={0}
+      w="100%"
+      bg="#829fd9"
+      boxShadow="base"
+      position="fixed"
+      transition="height 0.5s ease"
+      h={scrolled ? '60px' : '120px'}
+    >
+      <HStack spacing={8} zIndex={1000}>
+        <NavItem href="/" square={scrolled}>
+          Home
         </NavItem>
-        <NavItem square={!scrolled} round style={{ width: 60, height: 60 }}>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://github.com/williamdotcool"
-          >
-            <GitHubIcon fontSize="large" />
-          </a>
+        <NavItem
+          external
+          square={scrolled}
+          href="https://github.com/williamdotcool"
+        >
+          <FaGithub size="42px" />
         </NavItem>
-      </Nav>
+      </HStack>
       <AnimatedShapes animate={!scrolled} />
-    </Background>
+    </Center>
   )
 }
 

@@ -1,22 +1,12 @@
 import Head from 'next/head'
-import styled from 'styled-components'
+import { Box, Heading, Text } from '@chakra-ui/react'
 
 import Date from '../../components/Date'
 import Layout from '../../components/Layout'
 
 import { getAllEssayIds, getEssayData } from '../../lib/essays'
 
-const Title = styled.h1`
-  font-size: 2rem;
-  line-height: 1.3;
-  font-weight: 800;
-  letter-spacing: -0.05rem;
-  margin: 1rem 0;
-`
-
-const LightText = styled.div`
-  color: #999;
-`
+import styles from './mdx.module.css'
 
 export async function getStaticProps({ params }) {
   const essayData = await getEssayData(params.id)
@@ -42,11 +32,16 @@ export default function Essay({ essayData }) {
         <title>{essayData.title}</title>
       </Head>
       <article>
-        <Title>{essayData.title}</Title>
-        <LightText>
+        <Heading my={2} fontWeight="bold">
+          {essayData.title}
+        </Heading>
+        <Text color="#999" my={4}>
           <Date dateString={essayData.date} />
-        </LightText>
-        <div dangerouslySetInnerHTML={{ __html: essayData.contentHtml }} />
+        </Text>
+        <Box
+          className={styles.container}
+          dangerouslySetInnerHTML={{ __html: essayData.contentHtml }}
+        />
       </article>
     </Layout>
   )

@@ -1,39 +1,15 @@
 import { useState } from 'react'
+import {
+  Button,
+  Container,
+  Heading,
+  Link as ChakraLink,
+  Text,
+} from '@chakra-ui/react'
 import Link from 'next/link'
-import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import MessageDialog from '../components/MessageDialog'
-
-const Summary = styled.div`
-  display: flex;
-  margin-bottom: 40px;
-
-  @media all and (max-width: 860px) {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-`
-
-const Content = styled.div`
-  max-width: 900px;
-  padding: 0 6px;
-`
-
-const Title = styled.h1`
-  width: 100%;
-  margin-top: 0;
-  margin-bottom: 0;
-`
-
-const SubTitle = styled.h2`
-  width: 100%;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 100%;
-  font-weight: normal;
-`
 
 export default function Home() {
   const [dialogOpen, setDialogOpen] = useState(false)
@@ -48,64 +24,56 @@ export default function Home() {
 
   return (
     <Layout>
-      <Summary>
-        <Content>
-          <Title>Welcome to William's website.</Title>
-          <SubTitle>A place to share my thoughts.</SubTitle>
-          <p>
-            I live in{' '}
-            <Link href="/essays/moving-to-san-francisco">
-              <a>San Francisco</a>
-            </Link>
-            . I really enjoy{' '}
-            <Link href="/essays/holotropic-breathwork">
-              <a>Holotropic Breathwork</a>
-            </Link>
-            , Improv, and{' '}
-            <Link href="/essays/lessons-learned-kickboxing">
-              <a>Kickboxing</a>
-            </Link>
-            . I do software consulting at{' '}
-            <Link href="/essays/my-first-two-years-at-pivotal">
-              <a>VMware Tanzu Labs</a>
-            </Link>
-            . One time I{' '}
-            <Link href="/essays/learning-elixir">
-              <a>learned Elixir</a>
-            </Link>
-            .
-          </p>
-          <p>
-            I sometimes write code on{' '}
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://github.com/williamdotcool"
-            >
-              Github
-            </a>
-            .
-          </p>
-          <p>
-            Check out my{' '}
-            <Link href="/essays">
-              <a>essays</a>
-            </Link>
-            .
-          </p>
-          <p style={{ color: '#366ddc' }}>
-            <a href="#" onClick={handleOpen}>
-              Tell me what you think
-            </a>
-          </p>
-        </Content>
-        <video
-          controls
-          width="266"
-          height="470"
-          src={require('../videos/intro.mp4')}
-        />
-      </Summary>
+      <Container>
+        <Heading as="h3" size="lg" my="10px">
+          Welcome to William's website.
+        </Heading>
+        <Heading as="h5" size="sm" my="10px">
+          A place to share my thoughts.
+        </Heading>
+        <Text size="lg" my="10px">
+          I live in{' '}
+          <Link href="/essays/moving-to-san-francisco">
+            <a>San Francisco</a>
+          </Link>
+          . I really enjoy{' '}
+          <Link href="/essays/holotropic-breathwork">
+            <a>Holotropic Breathwork</a>
+          </Link>
+          , Improv, and{' '}
+          <Link href="/essays/lessons-learned-kickboxing">
+            <a>Kickboxing</a>
+          </Link>
+          . I do software consulting at{' '}
+          <Link href="/essays/my-first-two-years-at-pivotal">
+            <a>VMware Tanzu Labs</a>
+          </Link>
+          . One time I{' '}
+          <Link href="/essays/learning-elixir">
+            <a>learned Elixir</a>
+          </Link>
+          . I sometimes write code on{' '}
+          <ChakraLink href="https://github.com/williamdotcool" isExternal>
+            Github
+          </ChakraLink>
+          .
+        </Text>
+        <Text size="lg" my="10px">
+          Check out my{' '}
+          <Link href="/essays">
+            <a>essays</a>
+          </Link>
+          .
+        </Text>
+        <Button
+          colorScheme="blue"
+          variant="link"
+          onClick={handleOpen}
+          my="10px"
+        >
+          Tell me what you think
+        </Button>
+      </Container>
       <MessageDialog onClose={handleClose} open={dialogOpen} />
     </Layout>
   )

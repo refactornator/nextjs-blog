@@ -1,34 +1,24 @@
 import Link from 'next/link'
-import styled from 'styled-components'
+import { Container, Flex } from '@chakra-ui/react'
 
 import LikeButton from './LikeButton'
 
-const Container = styled.div`
-  max-width: 840px;
-  margin: 14px auto;
-  padding: 0 8px;
-`
-
-const EssayFooter = styled.div`
-  margin: 3rem 0 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`
-
 export default function Layout({ children, essay }) {
   return (
-    <Container>
+    <Container maxW="container.md">
       <main>{children}</main>
       {essay && (
         <>
-          <EssayFooter>
+          <Flex
+            alignItems="center"
+            justifyContent="space-between"
+            margin="3rem 0 0"
+          >
             <Link href="/">
               <a>← Back to home</a>
             </Link>
             <LikeButton />
-          </EssayFooter>
+          </Flex>
         </>
       )}
     </Container>
