@@ -15,7 +15,6 @@ const NavItem = ({ children, href, external, square }) => {
     <Link href={href}>
       <ChakraLink
         href={href}
-        color="#829fd9"
         fontSize="4xl"
         fontWeight="bolder"
         isExternal={external}
@@ -25,7 +24,7 @@ const NavItem = ({ children, href, external, square }) => {
           bg="#ffb83f"
           borderRadius={square ? '0' : '10px'}
           height="60px"
-          width="120px"
+          width="60px"
           boxShadow="xl"
           transition="all 0.5s ease"
           _hover={{
@@ -62,7 +61,7 @@ const Header = () => {
     <Center
       top={0}
       w="100%"
-      background="linear-gradient(180deg, hsla(14, 86%, 62%, 1) 0%, hsla(220, 53%, 68%, 1) 50%)"
+      background="linear-gradient(180deg, hsla(38, 100%, 62%, 1) 0%, hsla(220, 53%, 68%, 1) 80%)"
       boxShadow="base"
       position="fixed"
       transition="height 0.5s ease"
@@ -81,6 +80,12 @@ const Header = () => {
                 size="xl"
                 name="William Lindner"
                 src="/images/profile2.jpg"
+                borderWidth="2px"
+                borderColor="#ffb83f"
+                transition="all 0.5s ease"
+                _hover={{
+                  borderColor: 'white',
+                }}
               />
             </ChakraLink>
           </Link>
