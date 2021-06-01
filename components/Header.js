@@ -79,7 +79,7 @@ const Header = () => {
               <Avatar
                 size="xl"
                 name="William Lindner"
-                src="/images/profile2.jpg"
+                src="/images/profile-tiny.jpeg"
                 borderWidth="2px"
                 borderColor="#ffb83f"
                 transition="all 0.5s ease"
