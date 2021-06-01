@@ -1,9 +1,14 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Center, Link as ChakraLink, HStack } from '@chakra-ui/react'
+import {
+  Center,
+  Link as ChakraLink,
+  HStack,
+  Avatar,
+  Spacer,
+  Container,
+} from '@chakra-ui/react'
 import { FaGithub } from 'react-icons/fa'
-
-import AnimatedShapes from './AnimatedShapes'
 
 const NavItem = ({ children, href, external, square }) => {
   return (
@@ -57,25 +62,38 @@ const Header = () => {
     <Center
       top={0}
       w="100%"
-      bg="#829fd9"
+      background="linear-gradient(180deg, hsla(14, 86%, 62%, 1) 0%, hsla(220, 53%, 68%, 1) 50%)"
       boxShadow="base"
       position="fixed"
       transition="height 0.5s ease"
       h={scrolled ? '60px' : '120px'}
     >
-      <HStack spacing={8} zIndex={1000}>
-        <NavItem href="/" square={scrolled}>
-          Home
-        </NavItem>
-        <NavItem
-          external
-          square={scrolled}
-          href="https://github.com/williamdotcool"
-        >
-          <FaGithub size="42px" />
-        </NavItem>
-      </HStack>
-      <AnimatedShapes animate={!scrolled} />
+      <Container maxW="container.sm">
+        <HStack spacing={8} zIndex={1000}>
+          <Link href={'/'}>
+            <ChakraLink
+              href={'/'}
+              color="#829fd9"
+              fontSize="4xl"
+              fontWeight="bolder"
+            >
+              <Avatar
+                size="xl"
+                name="William Lindner"
+                src="/images/profile2.jpg"
+              />
+            </ChakraLink>
+          </Link>
+          <Spacer />
+          <NavItem
+            external
+            square={scrolled}
+            href="https://github.com/williamdotcool"
+          >
+            <FaGithub size="42px" />
+          </NavItem>
+        </HStack>
+      </Container>
     </Center>
   )
 }

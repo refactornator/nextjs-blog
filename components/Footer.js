@@ -15,10 +15,10 @@ const Footer = () => {
         © {new Date().getFullYear().toString()} William Lindner
       </Center>
       <Box width="10px" />
-      <Flex color={colors.midnight} justifyContent="space-between">
+      <Flex justifyContent="space-between">
         <a href="https://twitter.com/wlindner" target="_blank" rel="noopener">
           <Center minW="44px" minH="44px">
-            <FaTwitter size="30px" />
+            <FaTwitter size="30px" color={colors.royal} />
           </Center>
         </a>
         <a
@@ -27,7 +27,7 @@ const Footer = () => {
           rel="noopener"
         >
           <Center minW="44px" minH="44px">
-            <FaGithub size="30px" />
+            <FaGithub size="30px" color={colors.royal} />
           </Center>
         </a>
         <a
@@ -36,7 +36,7 @@ const Footer = () => {
           rel="noopener"
         >
           <Center minW="44px" minH="44px">
-            <FaLinkedin size="30px" />
+            <FaLinkedin size="30px" color={colors.royal} />
           </Center>
         </a>
       </Flex>
