@@ -6,12 +6,11 @@ import '@fontsource/ubuntu/700.css'
 import Head from 'next/head'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import * as ackeeTracker from 'ackee-tracker'
 
-import { Flex } from '@chakra-ui/react'
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, Flex } from '@chakra-ui/react'
 
 import theme from '../utils/theme'
+import * as gtag from '../lib/gtag'
 
 import Footer from '../components/Footer'
 import Header from '../components/Header'
@@ -20,24 +19,15 @@ export const siteTitle = "William Lindner's Blog, 2 n's"
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()
-
   useEffect(() => {
-    let ackee
-    if (router.isReady) {
-      ackee = ackeeTracker.create('https://sad-dijkstra-e51d59.netlify.app', {
-        detailed: true,
-      })
+    const handleRouteChange = (url) => {
+      gtag.pageview(url)
     }
-
-    router.events.on('routeChangeComplete', () => {
-      if (ackee) {
-        ackee.record('adf384d5-589a-46ae-abdf-8e7958db6565')
-      }
-    })
+    router.events.on('routeChangeComplete', handleRouteChange)
     return () => {
-      router.events.off('routeChangeComplete')
+      router.events.off('routeChangeComplete', handleRouteChange)
     }
-  }, [])
+  }, [router.events])
 
   return (
     <>
