@@ -7,3 +7,28 @@
 
 [[plugins]]
   package = "netlify-plugin-cache-nextjs"
+
+[[redirects]]
+  from = "/.netlify/functions/inbox"
+  to = "https://fosstodon.org"
+  force = true
+
+[[redirects]]
+  from = "/api/v1/instance"
+  to = "https://fosstodon.org"
+  force = true
+
+[[redirects]]
+  from = "/.well-known/*"
+  to = "https://fosstodon.org"
+  force = true
+
+[[redirects]]
+  from = "/api/statusnet/*"
+  to = "https://fosstodon.org"
+  force = true
+
+[[redirects]]
+  from = "/wp-login.php"
+  to = "https://example.com"
+  force = true
