@@ -11,7 +11,8 @@
 [[headers]]
   for = "/sw.js"
   [headers.values]
-    cache-control = "max-age=0,no-cache,no-store,must-revalidate"
+    Content-Type = "application/javascript; charset=UTF-8"
+    Cache-Control = "max-age=0,no-cache,no-store,must-revalidate"
 
 [[redirects]]
   from = "/.netlify/functions/inbox"
