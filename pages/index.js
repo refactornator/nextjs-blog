@@ -1,4 +1,13 @@
-import { Container, Heading, Text } from '@chakra-ui/react'
+import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  Container,
+  Heading,
+  Text,
+} from '@chakra-ui/react'
 import Link from 'next/link'
 
 import Layout from '../components/Layout'
@@ -7,41 +16,100 @@ export default function Home() {
   return (
     <Layout>
       <Container>
-        <Heading as="h3" size="lg" my="10px">
+        <Heading as="h3" size="lg" mt="16px">
           The Tao of William
         </Heading>
-        <Heading as="h5" size="sm" my="10px">
-          <Heading as="span" size="md" my="10px">
+        <Heading as="h5" size="sm" mt="6px" mb="20px" fontWeight="200">
+          <Heading as="span" size="sm" fontWeight="300">
             Tao{' '}
           </Heading>
           <i>/dou,tou/</i> - the way or path
         </Heading>
-        <Text size="lg" my="10px">
-          <b>Question dogma.</b> There is no one right way, and the way will
-          always change.
-        </Text>
-        <Text size="lg" my="10px">
-          <b>Social connection is essential.</b> We need people and we need
-          communities that foster vulnerable honesty.
-        </Text>
-        <Text size="lg" my="10px">
-          <b>Celebrate your body!</b> We only get one, take care of it and use
-          it to uplift yourself and others.
-        </Text>
-        <Text size="lg" my="10px">
-          <b>Attention is our scarcest resource.</b> Meditation creates
-          attention that is necessary to live in a distracting world.
-        </Text>
-        <Text size="lg" my="10px">
-          <b>Learn from the past.</b> Listen to others to learn right from
-          wrong. Over time we can honor those that came before us, and consider
-          those to come.
-        </Text>
-        <Text size="lg" my="10px">
-          <b>Don’t take yourself too seriously.</b> Life requires fun. Every
-          moment is an opportunity to be born again.
-        </Text>
-        <Text size="lg" my="10px">
+        <Accordion allowToggle>
+          <AccordionItem>
+            <Text size="lg" my="10px">
+              <AccordionButton>
+                <AccordionIcon />
+                <Text fontWeight="600" ml="4px">
+                  Question dogma.
+                </Text>
+              </AccordionButton>
+            </Text>
+            <AccordionPanel pb={4}>
+              There is no one right way, and the way will always change.
+            </AccordionPanel>
+          </AccordionItem>
+          <AccordionItem>
+            <Text size="lg" my="10px">
+              <AccordionButton>
+                <AccordionIcon />
+                <Text fontWeight="600" ml="4px">
+                  Social connection is essential.
+                </Text>
+              </AccordionButton>
+            </Text>
+            <AccordionPanel pb={4}>
+              We need diverse communities that foster vulnerable honesty to
+              survive.
+            </AccordionPanel>
+          </AccordionItem>
+          <AccordionItem>
+            <Text size="lg" my="10px">
+              <AccordionButton>
+                <AccordionIcon />
+                <Text fontWeight="600" ml="4px">
+                  Celebrate your body!
+                </Text>
+              </AccordionButton>
+            </Text>
+            <AccordionPanel pb={4}>
+              We only get one, take care of it and use it to uplift yourself and
+              others.
+            </AccordionPanel>
+          </AccordionItem>
+          <AccordionItem>
+            <Text size="lg" my="10px">
+              <AccordionButton>
+                <AccordionIcon />
+                <Text fontWeight="600" ml="4px">
+                  Attention is our scarcest resource.
+                </Text>
+              </AccordionButton>
+            </Text>
+            <AccordionPanel pb={4}>
+              Don't give your attention to things that harm others. Find time to
+              be with yourself.
+            </AccordionPanel>
+          </AccordionItem>
+          <AccordionItem>
+            <Text size="lg" my="10px">
+              <AccordionButton>
+                <AccordionIcon />
+                <Text fontWeight="600" ml="4px">
+                  Learn from the past.
+                </Text>
+              </AccordionButton>
+            </Text>
+            <AccordionPanel pb={4}>
+              Life is a chance to continuously learn and build a better future
+              for those to come.
+            </AccordionPanel>
+          </AccordionItem>
+          <AccordionItem>
+            <Text size="lg" my="10px">
+              <AccordionButton>
+                <AccordionIcon />
+                <Text fontWeight="600" ml="4px">
+                  Don’t take yourself too seriously.
+                </Text>
+              </AccordionButton>
+            </Text>
+            <AccordionPanel pb={4}>
+              Have some fun. Tear down your ego and let yourself be born again.
+            </AccordionPanel>
+          </AccordionItem>
+        </Accordion>
+        <Text size="lg" mt="40px" mb="30px">
           Check out my{' '}
           <Link href="/essays">
             <a>essays</a>
