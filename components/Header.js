@@ -61,7 +61,7 @@ const Header = () => {
     <Center
       top={0}
       w="100%"
-      background="linear-gradient(180deg, hsla(38, 100%, 62%, 1) 0%, hsla(220, 53%, 68%, 1) 45%)"
+      background="linear-gradient(174deg, hsla(38, 100%, 50%, 1), hsla(220, 53%, 68%, 1) 61.34%)"
       boxShadow="base"
       position="fixed"
       transition="height 0.5s ease"
