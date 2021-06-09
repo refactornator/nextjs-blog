@@ -49,8 +49,8 @@ export default function Home() {
               </AccordionButton>
             </Text>
             <AccordionPanel pb={4}>
-              We need diverse communities that foster vulnerable honesty to
-              survive.
+              We need diverse communities that foster vulnerable honesty in
+              order to thrive.
             </AccordionPanel>
           </AccordionItem>
           <AccordionItem>
