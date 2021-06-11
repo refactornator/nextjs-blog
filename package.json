@@ -35,6 +35,6 @@
   "homepage": "https://william.cool",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/williamdotcool/nextjs-blog.git"
+    "url": "git+https://github.com/refactornator/nextjs-blog.git"
   }
 }

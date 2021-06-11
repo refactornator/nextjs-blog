@@ -93,7 +93,7 @@ const Header = () => {
           <NavItem
             external
             square={scrolled}
-            href="https://github.com/williamdotcool"
+            href="https://github.com/refactornator"
           >
             <FaGithub size="42px" />
           </NavItem>

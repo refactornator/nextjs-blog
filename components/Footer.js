@@ -22,7 +22,7 @@ const Footer = () => {
           </Center>
         </a>
         <a
-          href="https://github.com/williamdotcool"
+          href="https://github.com/refactornator"
           target="_blank"
           rel="noopener"
         >
