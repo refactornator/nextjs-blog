@@ -11,7 +11,7 @@
     "@chakra-ui/react": "^1.6.3",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
-    "@fontsource/ubuntu": "^4.4.2",
+    "@fontsource/ubuntu": "^4.4.5",
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
     "axios": "^0.21.1",
@@ -19,7 +19,7 @@
     "faunadb": "^4.3.0",
     "framer-motion": "^4.1.17",
     "gray-matter": "^4.0.3",
-    "next": "^10.2.3",
+    "next": "^11.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",
@@ -29,8 +29,8 @@
     "sharp": "^0.28.3"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^3.4.1",
-    "prettier": "2.3.0"
+    "@netlify/plugin-nextjs": "^3.4.2",
+    "prettier": "2.3.1"
   },
   "homepage": "https://william.cool",
   "repository": {

@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import {
+  Box,
   Center,
-  Link as ChakraLink,
-  HStack,
-  Avatar,
-  Spacer,
   Container,
+  HStack,
+  Link as ChakraLink,
+  Spacer,
 } from '@chakra-ui/react'
 import { FaGithub } from 'react-icons/fa'
+import author from '../public/images/profile-tiny.jpeg'
 
 const NavItem = ({ children, href, external, square }) => {
   return (
@@ -76,17 +78,28 @@ const Header = () => {
               fontSize="4xl"
               fontWeight="bolder"
             >
-              <Avatar
-                size="xl"
-                name="William Lindner"
-                src="/images/profile-tiny.jpeg"
+              <Box
+                display="inline-block"
+                width="100px"
+                height="100px"
+                overflow="hidden"
+                borderRadius="50%"
                 borderWidth="2px"
                 borderColor="#ffb83f"
                 transition="all 0.5s ease"
                 _hover={{
                   borderColor: 'white',
                 }}
-              />
+              >
+                <Image
+                  src={author}
+                  width="96px"
+                  height="96px"
+                  objectFit="cover"
+                  alt="Liam Lindner"
+                  placeholder="blur"
+                />
+              </Box>
             </ChakraLink>
           </Link>
           <Spacer />
