@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import {
-  Box,
+  Flex,
   Center,
   Container,
   HStack,
@@ -10,7 +10,7 @@ import {
   Spacer,
 } from '@chakra-ui/react'
 import { FaGithub } from 'react-icons/fa'
-import author from '../public/images/profile-tiny.jpeg'
+import author from '../public/images/face.jpg'
 
 const NavItem = ({ children, href, external, square }) => {
   return (
@@ -78,8 +78,9 @@ const Header = () => {
               fontSize="4xl"
               fontWeight="bolder"
             >
-              <Box
-                display="inline-block"
+              <Flex
+                justifyContent="center"
+                alignItems="center"
                 width="100px"
                 height="100px"
                 overflow="hidden"
@@ -99,7 +100,7 @@ const Header = () => {
                   alt="Liam Lindner"
                   placeholder="blur"
                 />
-              </Box>
+              </Flex>
             </ChakraLink>
           </Link>
           <Spacer />
