@@ -105,7 +105,7 @@ export default function Home() {
               </AccordionButton>
             </Text>
             <AccordionPanel pb={4}>
-              Have some fun. Tear down your ego and let yourself be born again.
+              Tear down your ego and have some fun.
             </AccordionPanel>
           </AccordionItem>
         </Accordion>
