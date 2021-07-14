@@ -17,7 +17,7 @@ export default function Home() {
     <Layout>
       <Container>
         <Heading as="h3" size="lg" mt="16px">
-          The Tao of William
+          The Tao of Liam
         </Heading>
         <Heading as="h5" size="sm" mt="6px" mb="20px" fontWeight="200">
           <Heading as="span" size="sm" fontWeight="300">

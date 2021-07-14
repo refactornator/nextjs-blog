@@ -15,7 +15,7 @@ import * as gtag from '../lib/gtag'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 
-export const siteTitle = "William Lindner's Blog, 2 n's"
+export const siteTitle = "Liam Lindner's Blog, 2 n's"
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()

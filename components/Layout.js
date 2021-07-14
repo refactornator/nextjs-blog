@@ -5,7 +5,7 @@ import LikeButton from './LikeButton'
 
 export default function Layout({ children, essay }) {
   return (
-    <Container maxW="container.md">
+    <Container maxW="container.md" paddingX="8px">
       <main>{children}</main>
       {essay && (
         <>

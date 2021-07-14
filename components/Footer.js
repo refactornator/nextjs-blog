@@ -12,7 +12,7 @@ const Footer = () => {
       justifyContent="center"
     >
       <Center color={colors.midnight} textTransform="uppercase">
-        © {new Date().getFullYear().toString()} William Lindner
+        © {new Date().getFullYear().toString()} Liam Lindner
       </Center>
       <Box width="10px" />
       <Flex justifyContent="space-between">

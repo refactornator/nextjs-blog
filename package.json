@@ -1,7 +1,7 @@
 {
   "name": "blog",
-  "description": "William Lindner's Blog",
-  "author": "William Lindner <wlindner522@gmail.com>",
+  "description": "Liam Lindner's Blog",
+  "author": "Liam Lindner <wlindner522@gmail.com>",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -32,7 +32,7 @@
     "@netlify/plugin-nextjs": "^3.4.2",
     "prettier": "2.3.1"
   },
-  "homepage": "https://william.cool",
+  "homepage": "https://refactornator.com",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/refactornator/nextjs-blog.git"
