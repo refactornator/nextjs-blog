@@ -11,7 +11,7 @@ import {
 import Date from '../components/Date'
 import Layout from '../components/Layout'
 
-import { getSortedEssayData } from '../lib/essays'
+import { getAllEssays } from '../lib/essays'
 
 export default function Essays({ allEssaysData }) {
   return (
@@ -21,16 +21,16 @@ export default function Essays({ allEssaysData }) {
           Essays
         </Heading>
         <List>
-          {allEssaysData.map(({ id, date, title }) => (
-            <ListItem key={id} my={3}>
-              <Link href={`/essays/${id}`}>
+          {allEssaysData.map(({ slug, frontmatter }) => (
+            <ListItem key={slug} my={3}>
+              <Link href={`/essays/${slug}`}>
                 <ChakraLink fontSize="2xl" color="blue">
-                  {title}
+                  {frontmatter.title}
                 </ChakraLink>
               </Link>
               <br />
               <Text color="#999">
-                <Date dateString={date} />
+                <Date dateString={frontmatter.date} />
               </Text>
             </ListItem>
           ))}
@@ -41,7 +41,7 @@ export default function Essays({ allEssaysData }) {
 }
 
 export async function getStaticProps() {
-  const allEssaysData = getSortedEssayData()
+  const allEssaysData = getAllEssays()
   return {
     props: {
       allEssaysData,
