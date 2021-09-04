@@ -37,9 +37,9 @@ export default function App({ Component, pageProps }) {
         <meta name="description" content={siteTitle} />
       </Head>
       <ChakraProvider theme={theme}>
-        <Flex minH="100%" direction="column">
+        <Flex minH="100%" direction="column" backgroundColor="#333333">
           <Header />
-          <Flex marginTop="120px" flex="1 0 auto">
+          <Flex flex="1 0 auto">
             <Component {...pageProps} />
           </Flex>
           <Footer />

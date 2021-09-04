@@ -1,119 +1,34 @@
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
-import {
-  Flex,
-  Center,
-  Container,
-  HStack,
-  Link as ChakraLink,
-  Spacer,
-} from '@chakra-ui/react'
-import { FaGithub } from 'react-icons/fa'
-import author from '../public/images/face.jpg'
-
-const NavItem = ({ children, href, external, square }) => {
-  return (
-    <Link href={href}>
-      <ChakraLink
-        href={href}
-        fontSize="4xl"
-        fontWeight="bolder"
-        isExternal={external}
-      >
-        <Center
-          p="10px"
-          bg="#ffb83f"
-          borderRadius={square ? '0' : '10px'}
-          height="60px"
-          width="60px"
-          boxShadow="xl"
-          transition="all 0.5s ease"
-          _hover={{
-            background: 'white',
-          }}
-          _active={{
-            transition: 'background 0.0s',
-            background: '#ffb83f',
-            boxShadow: 'md',
-          }}
-        >
-          {children}
-        </Center>
-      </ChakraLink>
-    </Link>
-  )
-}
+import { Box, Flex, Link as ChakraLink, Spacer } from '@chakra-ui/react'
 
 const Header = () => {
-  const [scrolled, setScrolled] = useState(false)
-
-  const handleScroll = () => {
-    setScrolled(window.scrollY > 40)
-  }
-
-  useEffect(() => {
-    addEventListener('scroll', handleScroll)
-    return () => {
-      removeEventListener('scroll', handleScroll)
-    }
-  }, [])
-
   return (
-    <Center
-      top={0}
-      w="100%"
-      background="linear-gradient(174deg, hsla(38, 100%, 50%, 1), hsla(220, 53%, 68%, 1) 61.34%)"
-      boxShadow="base"
-      position="fixed"
-      transition="height 0.5s ease"
-      h={scrolled ? '60px' : '120px'}
-    >
-      <Container maxW="container.sm">
-        <HStack spacing={8} zIndex={1000}>
-          <Link href={'/'}>
-            <ChakraLink
-              href={'/'}
-              color="#829fd9"
-              fontSize="4xl"
-              fontWeight="bolder"
-            >
-              <Flex
-                justifyContent="center"
-                alignItems="center"
-                width="100px"
-                height="100px"
-                overflow="hidden"
-                borderRadius="50%"
-                borderWidth="2px"
-                borderColor="#ffb83f"
-                transition="all 0.5s ease"
-                _hover={{
-                  borderColor: 'white',
-                }}
-              >
-                <Image
-                  src={author}
-                  width="96px"
-                  height="96px"
-                  objectFit="cover"
-                  alt="Liam Lindner"
-                  placeholder="blur"
-                />
-              </Flex>
-            </ChakraLink>
-          </Link>
-          <Spacer />
-          <NavItem
-            external
-            square={scrolled}
-            href="https://github.com/refactornator"
-          >
-            <FaGithub size="42px" />
-          </NavItem>
-        </HStack>
-      </Container>
-    </Center>
+    <Flex padding="20px">
+      <Box>
+        <Link href="/">
+          <ChakraLink fontSize="16px" color="white" href="/">
+            <b>Liam Lindner</b>
+            ©2021
+          </ChakraLink>
+        </Link>
+      </Box>
+      <Spacer />
+      <Box>
+        <Link href="/essays">
+          <ChakraLink color="white" href="/essays">
+            Essays
+          </ChakraLink>
+        </Link>
+        <ChakraLink
+          ml="32px"
+          color="white"
+          href="https://github.com/refactornator"
+          isExternal
+        >
+          Github
+        </ChakraLink>
+      </Box>
+    </Flex>
   )
 }
 

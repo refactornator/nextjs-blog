@@ -1,122 +1,45 @@
-import {
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
-  Container,
-  Heading,
-  Text,
-} from '@chakra-ui/react'
-import Link from 'next/link'
+import Image from 'next/image'
+import { Box, Heading, Flex, Wrap, WrapItem } from '@chakra-ui/react'
+import Clouds from '../components/Clouds'
 
-import Layout from '../components/Layout'
+import profilePic from '../public/images/IMG_4032.JPG'
 
 export default function Home() {
   return (
-    <Layout>
-      <Container>
-        <Heading as="h3" size="lg" mt="16px">
-          The Tao of Liam
-        </Heading>
-        <Heading as="h5" size="sm" mt="6px" mb="20px" fontWeight="200">
-          <Heading as="span" size="sm" fontWeight="300">
-            Tao{' '}
-          </Heading>
-          <i>/dou,tou/</i> - the way or path
-        </Heading>
-        <Accordion allowToggle>
-          <AccordionItem>
-            <Text size="lg" my="10px">
-              <AccordionButton>
-                <AccordionIcon />
-                <Text fontWeight="600" ml="4px">
-                  Question dogma.
-                </Text>
-              </AccordionButton>
-            </Text>
-            <AccordionPanel pb={4}>
-              There is no one right way, and the way will always change.
-            </AccordionPanel>
-          </AccordionItem>
-          <AccordionItem>
-            <Text size="lg" my="10px">
-              <AccordionButton>
-                <AccordionIcon />
-                <Text fontWeight="600" ml="4px">
-                  Social connection is essential.
-                </Text>
-              </AccordionButton>
-            </Text>
-            <AccordionPanel pb={4}>
-              We need diverse communities that foster vulnerable honesty in
-              order to thrive.
-            </AccordionPanel>
-          </AccordionItem>
-          <AccordionItem>
-            <Text size="lg" my="10px">
-              <AccordionButton>
-                <AccordionIcon />
-                <Text fontWeight="600" ml="4px">
-                  Celebrate your body!
-                </Text>
-              </AccordionButton>
-            </Text>
-            <AccordionPanel pb={4}>
-              We only get one, take care of it and use it to uplift yourself and
-              others.
-            </AccordionPanel>
-          </AccordionItem>
-          <AccordionItem>
-            <Text size="lg" my="10px">
-              <AccordionButton>
-                <AccordionIcon />
-                <Text fontWeight="600" ml="4px">
-                  Attention is our scarcest resource.
-                </Text>
-              </AccordionButton>
-            </Text>
-            <AccordionPanel pb={4}>
-              Don't give your attention to things that harm others. Find time to
-              be with yourself.
-            </AccordionPanel>
-          </AccordionItem>
-          <AccordionItem>
-            <Text size="lg" my="10px">
-              <AccordionButton>
-                <AccordionIcon />
-                <Text fontWeight="600" ml="4px">
-                  Learn from the past.
-                </Text>
-              </AccordionButton>
-            </Text>
-            <AccordionPanel pb={4}>
-              Life is a chance to continuously learn and build a better future
-              for those to come.
-            </AccordionPanel>
-          </AccordionItem>
-          <AccordionItem>
-            <Text size="lg" my="10px">
-              <AccordionButton>
-                <AccordionIcon />
-                <Text fontWeight="600" ml="4px">
-                  Don’t take yourself too seriously.
-                </Text>
-              </AccordionButton>
-            </Text>
-            <AccordionPanel pb={4}>
-              Tear down your ego and have some fun.
-            </AccordionPanel>
-          </AccordionItem>
-        </Accordion>
-        <Text size="lg" mt="40px" mb="30px">
-          Check out my{' '}
-          <Link href="/essays">
-            <a>essays</a>
-          </Link>
-          .
-        </Text>
-      </Container>
-    </Layout>
+    <Flex padding="20px">
+      <Wrap>
+        <WrapItem>
+          <Box>
+            <Heading
+              as="h3"
+              w={['100%', '727px']}
+              maxWidth={['100%', '727px']}
+              fontSize={['50px', '100px', '200px']}
+              lineHeight={['50px', '100px', '200px']}
+              mt="16px"
+              color="white"
+              fontFamily="ivypresto-display, serif"
+            >
+              The Tao of Liam.
+            </Heading>
+            <Flex
+              justifyContent={['center', 'flex-end']}
+              pr={['0px', '150px']}
+              my={['40px', '0px']}
+            >
+              <Image
+                src={profilePic}
+                alt="Picture of the author"
+                width="232px"
+                height="309px"
+              />
+            </Flex>
+          </Box>
+        </WrapItem>
+        <WrapItem>
+          <Clouds />
+        </WrapItem>
+      </Wrap>
+    </Flex>
   )
 }

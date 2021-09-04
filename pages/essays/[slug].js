@@ -1,10 +1,9 @@
 import React from 'react'
 import Head from 'next/head'
-import { Box, Heading, Text } from '@chakra-ui/react'
+import { Box, Heading, Text, Flex, Wrap, WrapItem } from '@chakra-ui/react'
 import { getMDXComponent } from 'mdx-bundler/client'
 
 import Date from '../../components/Date'
-import Layout from '../../components/Layout'
 
 import { getSingleEssay, getAllEssays } from '../../lib/essays'
 
@@ -28,22 +27,44 @@ export const getStaticPaths = async () => {
 const Essay = ({ code, frontmatter }) => {
   const Component = React.useMemo(() => getMDXComponent(code), [code])
   return (
-    <Layout essay>
+    <>
       <Head>
         <title>{frontmatter.title}</title>
       </Head>
-      <article>
-        <Heading my={2} fontWeight="bold">
-          {frontmatter.title}
-        </Heading>
-        <Text color="#999" my={4}>
-          <Date dateString={frontmatter.date} />
-        </Text>
-        <Box className={styles.container}>
-          <Component />
-        </Box>
-      </article>
-    </Layout>
+      <Flex padding="20px">
+        <Wrap>
+          <WrapItem>
+            <Flex direction="column">
+              <Text color="white">
+                <Date dateString={frontmatter.date} />
+              </Text>
+              <Heading
+                maxWidth={['100%', '460px', '680px']}
+                fontSize={['36px', '66px', '96px']}
+                lineHeight={['36px', '66px', '96px']}
+                color="white"
+                fontFamily="ivypresto-display, serif"
+              >
+                {frontmatter.title}
+              </Heading>
+            </Flex>
+          </WrapItem>
+          <WrapItem>
+            <Box
+              maxWidth={['100%', '680px']}
+              mt="44px"
+              as="article"
+              color="white"
+              fontSize="20px"
+              lineHeight="28px"
+              className={styles.container}
+            >
+              <Component />
+            </Box>
+          </WrapItem>
+        </Wrap>
+      </Flex>
+    </>
   )
 }
 
