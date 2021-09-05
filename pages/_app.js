@@ -12,8 +12,9 @@ import { ChakraProvider, Flex } from '@chakra-ui/react'
 import theme from '../utils/theme'
 import * as gtag from '../lib/gtag'
 
-import Footer from '../components/Footer'
+import Canvas from '../components/Canvas'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 export const siteTitle = "Liam Lindner's Blog, 2 n's"
 
@@ -38,6 +39,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <ChakraProvider theme={theme}>
         <Flex minH="100%" direction="column" backgroundColor="#333333">
+          <Canvas />
           <Header />
           <Flex flex="1 0 auto">
             <Component {...pageProps} />

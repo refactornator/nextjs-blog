@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Box, Heading, Flex, Wrap, WrapItem } from '@chakra-ui/react'
-import Clouds from '../components/Clouds'
 
+import Clouds from '../components/Clouds'
 import profilePic from '../public/images/IMG_4032.JPG'
 
 export default function Home() {
