@@ -2,7 +2,8 @@ import Image from 'next/image'
 import { Box, Heading, Flex, Wrap, WrapItem } from '@chakra-ui/react'
 
 import Clouds from '../components/Clouds'
-import profilePic from '../public/images/IMG_4032.JPG'
+
+import profilePic from '../public/images/garden-headshot.jpg'
 
 export default function Home() {
   return (
@@ -12,11 +13,12 @@ export default function Home() {
           <Box>
             <Heading
               as="h3"
-              w={['100%', '727px']}
-              maxWidth={['100%', '727px']}
-              fontSize={['50px', '100px', '200px']}
-              lineHeight={['50px', '100px', '200px']}
+              w={['100%', '600px']}
+              maxWidth={['100%', '600px']}
+              fontSize={['30px', '50px', '100px']}
+              lineHeight={['30px', '50px', '100px']}
               mt="16px"
+              mb="60px"
               color="white"
               fontFamily="ivypresto-display, serif"
             >
@@ -30,8 +32,8 @@ export default function Home() {
               <Image
                 src={profilePic}
                 alt="Picture of the author"
-                width="232px"
-                height="309px"
+                width="260px"
+                height="260px"
               />
             </Flex>
           </Box>

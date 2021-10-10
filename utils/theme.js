@@ -2,8 +2,8 @@ import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
   fonts: {
-    heading: 'Ubuntu, Helvetica Neue, sans-serif, -apple-system',
-    body: 'Ubuntu, Helvetica Neue, sans-serif, -apple-system',
+    heading: 'ivypresto-display, serif',
+    body: 'Neue Haas Grotesk Display Pro, Helvetica Neue, sans-serif, -apple-system',
   },
   colors: {
     blue: {
@@ -38,12 +38,9 @@ const theme = extendTheme({
       },
       html: {
         height: '100%',
-        overflowY: 'scroll!important',
       },
       body: {
         height: '100%',
-        color: 'gray.600',
-        backgroundColor: '#f7f7f7',
       },
       a: {
         color: '#0070f3',

@@ -43,47 +43,45 @@ const TaoItem = ({ title, subtitle }) => {
 
 function Clouds() {
   return (
-    <>
-      <Box w={['100%', '680px']} maxWidth={['100%', '680px']}>
-        <Grid templateColumns={['repeat(1, 1fr)', 'repeat(5, 1fr)']}>
-          <Box />
-          <TaoItem title={items[0].title} subtitle={items[0].subtitle} />
-          <Box />
-          <Box />
-          <Box />
+    <Box w={['100%', '680px']} maxWidth={['100%', '680px']} position="relative">
+      <Grid templateColumns={['repeat(1, 1fr)', 'repeat(5, 1fr)']} zIndex={10}>
+        <Box />
+        <TaoItem title={items[0].title} subtitle={items[0].subtitle} />
+        <Box />
+        <Box />
+        <Box />
 
-          <Box />
-          <Box />
-          <Box />
-          <Box />
-          <TaoItem title={items[1].title} subtitle={items[1].subtitle} />
+        <Box />
+        <Box />
+        <Box />
+        <Box />
+        <TaoItem title={items[1].title} subtitle={items[1].subtitle} />
 
-          <TaoItem title={items[2].title} subtitle={items[2].subtitle} />
-          <Box />
-          <Box />
-          <Box />
-          <Box />
+        <TaoItem title={items[2].title} subtitle={items[2].subtitle} />
+        <Box />
+        <Box />
+        <Box />
+        <Box />
 
-          <Box />
-          <Box />
-          <Box />
-          <TaoItem title={items[3].title} subtitle={items[3].subtitle} />
-          <Box />
+        <Box />
+        <Box />
+        <Box />
+        <TaoItem title={items[3].title} subtitle={items[3].subtitle} />
+        <Box />
 
-          <Box />
-          <TaoItem title={items[4].title} subtitle={items[4].subtitle} />
-          <Box />
-          <Box />
-          <Box />
+        <Box />
+        <TaoItem title={items[4].title} subtitle={items[4].subtitle} />
+        <Box />
+        <Box />
+        <Box />
 
-          <Box />
-          <Box />
-          <Box />
-          <TaoItem title={items[5].title} subtitle={items[5].subtitle} />
-          <Box />
-        </Grid>
-      </Box>
-    </>
+        <Box />
+        <Box />
+        <Box />
+        <TaoItem title={items[5].title} subtitle={items[5].subtitle} />
+        <Box />
+      </Grid>
+    </Box>
   )
 }
 
