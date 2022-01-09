@@ -26,7 +26,7 @@ const items = [
       'Life is a chance to continuously learn and build a better future for those to come.',
   },
   {
-    title: 'Don’t take yourself too seriously.',
+    title: "Don't take yourself too seriously.",
     subtitle: 'Tear down your ego and have some fun.',
   },
 ]

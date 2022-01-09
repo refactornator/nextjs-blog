@@ -3,7 +3,6 @@ import './styles.css'
 import Head from 'next/head'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { useWindowWidth } from '@react-hook/window-size'
 
 import { ChakraProvider, Image, Flex } from '@chakra-ui/react'
 
@@ -14,12 +13,13 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 import gradientMesh from '../public/images/gradient-mesh.png'
+import useWindowDimensions from '../hooks/useWindowDimensions'
 
 export const siteTitle = "Liam Lindner's Blog, 2 n's"
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()
-  const windowWidth = useWindowWidth({ wait: 20 })
+  const { width: windowWidth } = useWindowDimensions()
 
   useEffect(() => {
     const handleRouteChange = (url) => {
@@ -43,6 +43,7 @@ export default function App({ Component, pageProps }) {
           top={windowWidth <= 740 ? 580 : 0}
           right={0}
           height="100%"
+          minHeight="820px"
           maxHeight={windowWidth <= 740 ? 820 : '100%'}
           position="absolute"
           zIndex={0}
