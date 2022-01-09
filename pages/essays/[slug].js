@@ -1,16 +1,15 @@
 import React from 'react'
 import Head from 'next/head'
 import { Box, Heading, Text, Flex, Wrap, WrapItem } from '@chakra-ui/react'
-import { getMDXComponent } from 'mdx-bundler/client'
 
 import Date from '../../components/Date'
 
-import { getSingleEssay, getAllEssays } from '../../lib/essays'
+import { getEssayData, getAllEssays } from '../../lib/essays'
 
 import styles from './mdx.module.css'
 
 export const getStaticProps = async ({ params }) => {
-  const post = await getSingleEssay(params.slug)
+  const post = await getEssayData(params.slug)
   return {
     props: { ...post },
   }
@@ -24,19 +23,18 @@ export const getStaticPaths = async () => {
   }
 }
 
-const Essay = ({ code, frontmatter }) => {
-  const Component = React.useMemo(() => getMDXComponent(code), [code])
+const Essay = ({ contentHtml, title, date }) => {
   return (
     <>
       <Head>
-        <title>{frontmatter.title}</title>
+        <title>{title}</title>
       </Head>
       <Flex padding="20px">
         <Wrap>
           <WrapItem>
             <Flex direction="column">
               <Text color="white">
-                <Date dateString={frontmatter.date} />
+                <Date dateString={date} />
               </Text>
               <Heading
                 maxWidth={['100%', '460px', '680px']}
@@ -45,7 +43,7 @@ const Essay = ({ code, frontmatter }) => {
                 color="white"
                 fontFamily="ivypresto-display, serif"
               >
-                {frontmatter.title}
+                {title}
               </Heading>
             </Flex>
           </WrapItem>
@@ -59,7 +57,7 @@ const Essay = ({ code, frontmatter }) => {
               lineHeight="28px"
               className={styles.container}
             >
-              <Component />
+              <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
             </Box>
           </WrapItem>
         </Wrap>
