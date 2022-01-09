@@ -40,9 +40,10 @@ export default function App({ Component, pageProps }) {
       </Head>
       <ChakraProvider theme={theme}>
         <Image
-          top={windowWidth <= 740 ? 580 : 0}
+          top={0}
           right={0}
           height="100%"
+          minWidth="600px"
           minHeight="820px"
           maxHeight={windowWidth <= 740 ? 820 : '100%'}
           position="absolute"

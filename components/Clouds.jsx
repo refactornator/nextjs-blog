@@ -1,4 +1,5 @@
-import { Box, Text, Flex } from '@chakra-ui/react'
+import { useMediaQuery, Box, Text, Flex } from '@chakra-ui/react'
+import useWindowDimensions from '../hooks/useWindowDimensions'
 
 const items = [
   {
@@ -31,35 +32,57 @@ const items = [
   },
 ]
 
-const TaoItem = ({ title, subtitle }) => {
+const TaoItem = ({ title, subtitle, floatAt }) => {
+  const { width } = useWindowDimensions()
+  const isLargerThan480 = width >= 480
   return (
-    <Box w="200px" mb="20px">
-      <Text color="white">
-        {title} <span style={{ opacity: '50%' }}>{subtitle}</span>
-      </Text>
-    </Box>
+    <Flex
+      minWidth="200px"
+      maxWidth={isLargerThan480 ? floatAt : '100%'}
+      justifyContent={isLargerThan480 ? 'flex-end' : 'center'}
+    >
+      <Box w="200px" mb="20px">
+        <Text color="white">
+          {title} <span style={{ opacity: '50%' }}>{subtitle}</span>
+        </Text>
+      </Box>
+    </Flex>
   )
 }
 
 function Clouds() {
   return (
     <Box w="100%" position="relative">
-      <Flex minWidth="200px" maxWidth="50%" justifyContent="flex-end">
-        <TaoItem title={items[0].title} subtitle={items[0].subtitle} />
-      </Flex>
-      <Flex minWidth="200px" maxWidth="100%" justifyContent="flex-end">
-        <TaoItem title={items[1].title} subtitle={items[1].subtitle} />
-      </Flex>
-      <TaoItem title={items[2].title} subtitle={items[2].subtitle} />
-      <Flex minWidth="200px" maxWidth="80%" justifyContent="flex-end">
-        <TaoItem title={items[3].title} subtitle={items[3].subtitle} />
-      </Flex>
-      <Flex minWidth="200px" maxWidth="50%" justifyContent="flex-end">
-        <TaoItem title={items[4].title} subtitle={items[4].subtitle} />
-      </Flex>
-      <Flex minWidth="200px" maxWidth="80%" justifyContent="flex-end">
-        <TaoItem title={items[5].title} subtitle={items[5].subtitle} />
-      </Flex>
+      <TaoItem
+        title={items[0].title}
+        subtitle={items[0].subtitle}
+        floatAt="50%"
+      />
+      <TaoItem
+        title={items[1].title}
+        subtitle={items[1].subtitle}
+        floatAt="100%"
+      />
+      <TaoItem
+        title={items[2].title}
+        subtitle={items[2].subtitle}
+        floatAt="0%"
+      />
+      <TaoItem
+        title={items[3].title}
+        subtitle={items[3].subtitle}
+        floatAt="80%"
+      />
+      <TaoItem
+        title={items[4].title}
+        subtitle={items[4].subtitle}
+        floatAt="50%"
+      />
+      <TaoItem
+        title={items[5].title}
+        subtitle={items[5].subtitle}
+        floatAt="80%"
+      />
     </Box>
   )
 }

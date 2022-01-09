@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Box, Heading, Flex, Wrap, WrapItem } from '@chakra-ui/react'
+import { Box, Heading, Flex, Center } from '@chakra-ui/react'
 
 import Clouds from '../components/Clouds'
 
@@ -7,9 +7,14 @@ import profilePic from '../public/images/garden-headshot.jpg'
 
 export default function Home() {
   return (
-    <Flex padding="20px" w="100%" flexWrap="wrap">
+    <Flex padding="20px" w="100%" flexWrap="wrap" justifyContent="center">
       <Box>
-        <Box mb="50px" w={{ lg: '680px', sm: '500px', base: '100%' }}>
+        <Flex
+          mb="50px"
+          direction="column"
+          justifyContent="center"
+          w={{ lg: '680px', sm: '500px', base: '100%' }}
+        >
           <Heading
             as="h3"
             w="100%"
@@ -24,15 +29,15 @@ export default function Home() {
             The Tao <br />
             of Liam.
           </Heading>
-          <Flex justifyContent="center">
+          <Center>
             <Image
               src={profilePic}
               alt="Picture of the author"
               width="260px"
               height="260px"
             />
-          </Flex>
-        </Box>
+          </Center>
+        </Flex>
       </Box>
       <Box flexGrow={1}>
         <Clouds />
