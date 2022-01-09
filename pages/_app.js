@@ -3,6 +3,7 @@ import './styles.css'
 import Head from 'next/head'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { useWindowWidth } from '@react-hook/window-size'
 
 import { ChakraProvider, Image, Flex } from '@chakra-ui/react'
 
@@ -18,6 +19,8 @@ export const siteTitle = "Liam Lindner's Blog, 2 n's"
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()
+  const windowWidth = useWindowWidth({ wait: 20 })
+
   useEffect(() => {
     const handleRouteChange = (url) => {
       gtag.pageview(url)
@@ -37,10 +40,10 @@ export default function App({ Component, pageProps }) {
       </Head>
       <ChakraProvider theme={theme}>
         <Image
-          top={0}
+          top={windowWidth <= 740 ? 580 : 0}
           right={0}
-          width="80%"
           height="100%"
+          maxHeight={windowWidth <= 740 ? 820 : '100%'}
           position="absolute"
           zIndex={0}
           src={gradientMesh.src}

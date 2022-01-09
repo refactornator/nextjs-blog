@@ -1,4 +1,4 @@
-import { Box, Grid, Text, Flex } from '@chakra-ui/react'
+import { Box, Text, Flex } from '@chakra-ui/react'
 
 const items = [
   {
@@ -33,54 +33,33 @@ const items = [
 
 const TaoItem = ({ title, subtitle }) => {
   return (
-    <Flex w={['100%', '200px']} mb={['10px', 0]}>
+    <Box w="200px" mb="20px">
       <Text color="white">
         {title} <span style={{ opacity: '50%' }}>{subtitle}</span>
       </Text>
-    </Flex>
+    </Box>
   )
 }
 
 function Clouds() {
   return (
-    <Box w={['100%', '680px']} maxWidth={['100%', '680px']} position="relative">
-      <Grid templateColumns={['repeat(1, 1fr)', 'repeat(5, 1fr)']} zIndex={10}>
-        <Box />
+    <Box w="100%" position="relative">
+      <Flex minWidth="200px" maxWidth="50%" justifyContent="flex-end">
         <TaoItem title={items[0].title} subtitle={items[0].subtitle} />
-        <Box />
-        <Box />
-        <Box />
-
-        <Box />
-        <Box />
-        <Box />
-        <Box />
+      </Flex>
+      <Flex minWidth="200px" maxWidth="100%" justifyContent="flex-end">
         <TaoItem title={items[1].title} subtitle={items[1].subtitle} />
-
-        <TaoItem title={items[2].title} subtitle={items[2].subtitle} />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-
-        <Box />
-        <Box />
-        <Box />
+      </Flex>
+      <TaoItem title={items[2].title} subtitle={items[2].subtitle} />
+      <Flex minWidth="200px" maxWidth="80%" justifyContent="flex-end">
         <TaoItem title={items[3].title} subtitle={items[3].subtitle} />
-        <Box />
-
-        <Box />
+      </Flex>
+      <Flex minWidth="200px" maxWidth="50%" justifyContent="flex-end">
         <TaoItem title={items[4].title} subtitle={items[4].subtitle} />
-        <Box />
-        <Box />
-        <Box />
-
-        <Box />
-        <Box />
-        <Box />
+      </Flex>
+      <Flex minWidth="200px" maxWidth="80%" justifyContent="flex-end">
         <TaoItem title={items[5].title} subtitle={items[5].subtitle} />
-        <Box />
-      </Grid>
+      </Flex>
     </Box>
   )
 }
