@@ -66,7 +66,7 @@ function Clouds() {
       <TaoItem
         title={items[2].title}
         subtitle={items[2].subtitle}
-        floatAt="0%"
+        floatAt="30%"
       />
       <TaoItem
         title={items[3].title}
