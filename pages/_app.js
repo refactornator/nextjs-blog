@@ -3,6 +3,7 @@ import './styles.css'
 import Head from 'next/head'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { motion } from 'framer-motion'
 
 import { ChakraProvider, Image, Flex } from '@chakra-ui/react'
 
@@ -39,17 +40,31 @@ export default function App({ Component, pageProps }) {
         <meta name="description" content={siteTitle} />
       </Head>
       <ChakraProvider theme={theme}>
-        <Image
-          top={0}
-          right={0}
-          height="100%"
-          minWidth="600px"
-          minHeight="820px"
-          maxHeight={windowWidth <= 740 ? 820 : '100%'}
-          position="absolute"
-          zIndex={0}
-          src={gradientMesh.src}
-        />
+        <motion.div
+          key={router.route}
+          initial="initial"
+          animate="animate"
+          variants={{
+            initial: {
+              opacity: 0,
+            },
+            animate: {
+              opacity: 1,
+            },
+          }}
+        >
+          <Image
+            top={0}
+            right={router.route.startsWith('/essays') ? '75%' : 0}
+            height="100%"
+            minWidth="600px"
+            minHeight="820px"
+            maxHeight={windowWidth <= 740 ? 820 : '100%'}
+            position="absolute"
+            zIndex={0}
+            src={gradientMesh.src}
+          />
+        </motion.div>
         <Flex minH="100%" direction="column" backgroundColor="#333">
           <Header />
           <Flex flex="1 0 auto" zIndex={1}>

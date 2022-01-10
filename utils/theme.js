@@ -43,7 +43,7 @@ const theme = extendTheme({
         height: '100%',
       },
       a: {
-        color: '#0070f3',
+        color: '#71FFEE',
         textDecoration: 'none',
       },
       'a:hover': {

@@ -29,7 +29,7 @@ const Essay = ({ contentHtml, title, date }) => {
       <Head>
         <title>{title}</title>
       </Head>
-      <Flex padding="20px">
+      <Flex px="20px" py="10px">
         <Wrap>
           <WrapItem>
             <Flex direction="column">
@@ -50,7 +50,7 @@ const Essay = ({ contentHtml, title, date }) => {
           <WrapItem>
             <Box
               maxWidth={['100%', '680px']}
-              mt="44px"
+              mt="20px"
               as="article"
               color="white"
               fontSize="20px"

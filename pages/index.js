@@ -21,8 +21,7 @@ export default function Home() {
             maxWidth="100%"
             fontSize={{ base: '80px', md: '130px', lg: '180px' }}
             lineHeight={{ base: '80px', md: '130px', lg: '180px' }}
-            mt="16px"
-            mb="60px"
+            mb="30px"
             color="white"
             fontFamily="ivypresto-display, serif"
           >
