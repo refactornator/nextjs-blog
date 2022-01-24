@@ -58,7 +58,7 @@ export default function App({ Component, pageProps }) {
             right={router.route.startsWith('/essays') ? '75%' : 0}
             height="100%"
             minWidth="600px"
-            minHeight="820px"
+            minHeight="800px"
             maxHeight={windowWidth <= 740 ? 820 : '100%'}
             position="absolute"
             zIndex={0}

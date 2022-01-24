@@ -41,7 +41,7 @@ const TaoItem = ({ title, subtitle, floatAt }) => {
       maxWidth={isLargerThan480 ? floatAt : '100%'}
       justifyContent={isLargerThan480 ? 'flex-end' : 'center'}
     >
-      <Box w={isLargerThan480 ? '200px' : '265px'} mb="20px">
+      <Box w={isLargerThan480 ? '200px' : '265px'} mb="12px">
         <Text color="white">
           {title} <span style={{ opacity: '50%' }}>{subtitle}</span>
         </Text>

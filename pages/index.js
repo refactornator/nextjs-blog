@@ -7,7 +7,7 @@ import profilePic from '../public/images/garden-headshot.jpg'
 
 export default function Home() {
   return (
-    <Flex padding="20px" w="100%" flexWrap="wrap" justifyContent="center">
+    <Flex paddingLeft="20px" w="100%" flexWrap="wrap" justifyContent="center">
       <Box>
         <Flex
           mb="50px"
@@ -21,7 +21,7 @@ export default function Home() {
             maxWidth="100%"
             fontSize={{ base: '80px', md: '130px', lg: '180px' }}
             lineHeight={{ base: '80px', md: '130px', lg: '180px' }}
-            mb="30px"
+            mb="5px"
             color="white"
             fontFamily="ivypresto-display, serif"
           >
