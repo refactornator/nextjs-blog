@@ -11,9 +11,6 @@ export default function Index() {
     sm: '100%',
     md: '680px',
   })
-  const titleAreaMarginTop = useBreakpointValue({
-    base: '64px',
-  })
   const imageMarginTop = useBreakpointValue({
     sm: '32px',
     md: '64px',
@@ -28,11 +25,10 @@ export default function Index() {
       marginBottom="64px"
     >
       <Flex
-        mt={titleAreaMarginTop}
-        direction="column"
-        justifyContent="flex-start"
         maxHeight="700px"
         width={titleAreaWidth}
+        direction="column"
+        justifyContent="flex-start"
       >
         <Title>The Tao of Liam.</Title>
         <Center marginTop={imageMarginTop}>

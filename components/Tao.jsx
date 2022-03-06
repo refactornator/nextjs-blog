@@ -52,7 +52,7 @@ const TaoItem = ({ title, subtitle, floatAt }) => {
 
 function Tao() {
   return (
-    <Box w="100%" position="relative" marginTop="84px">
+    <Box w="100%" position="relative" mb="32px">
       <TaoItem
         title={items[0].title}
         subtitle={items[0].subtitle}

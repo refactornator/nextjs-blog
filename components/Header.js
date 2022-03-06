@@ -3,16 +3,7 @@ import { Box, Flex, Link as ChakraLink, Spacer } from '@chakra-ui/react'
 
 const Header = () => {
   return (
-    <Flex
-      width="100%"
-      top={0}
-      right={0}
-      position="fixed"
-      padding="20px"
-      zIndex={100}
-      opacity={0.9}
-      backgroundColor="#333"
-    >
+    <Flex width="100%" padding="20px" flex="0 0 auto" backgroundColor="#333">
       <Box>
         <Link href="/" passHref>
           <ChakraLink fontSize="16px" color="white" href="/">

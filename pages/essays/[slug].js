@@ -34,7 +34,7 @@ const Essay = ({ contentHtml, title, date }) => {
       <Head>
         <title>{title}</title>
       </Head>
-      <Flex px="20px" py="10px" marginTop="84px" marginBottom="42px">
+      <Flex px="20px" py="10px">
         <Wrap>
           <WrapItem>
             <FrontMatter date={date} title={title} />

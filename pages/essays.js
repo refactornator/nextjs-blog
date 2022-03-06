@@ -21,7 +21,7 @@ export default function Essays({ allEssaysData }) {
   })
 
   return (
-    <Flex padding="20px" marginTop="64px" marginBottom="32px">
+    <Flex padding="20px">
       <Wrap>
         <WrapItem minWidth="320px">
           <Title>Essays</Title>
