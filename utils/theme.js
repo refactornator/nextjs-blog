@@ -34,14 +34,13 @@ const theme = extendTheme({
   styles: {
     global: {
       html: {
-        height: '100vh',
+        height: '-webkit-fill-available',
       },
       body: {
         height: '100vh',
+        minHeight: '-webkit-fill-available',
       },
-      '#__next': {
-        height: '100vh',
-      },
+      '#__next': {},
       a: {
         color: '#71FFEE',
         textDecoration: 'none',

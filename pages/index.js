@@ -13,13 +13,7 @@ export default function Index() {
   })
 
   return (
-    <Flex
-      width="100%"
-      padding="20px"
-      flexWrap="wrap"
-      justifyContent="center"
-      marginBottom="64px"
-    >
+    <Flex width="100%" padding="20px" flexWrap="wrap" justifyContent="center">
       <Flex
         width={titleAreaWidth}
         direction="column"

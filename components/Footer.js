@@ -6,6 +6,8 @@ const Footer = () => {
       width="100%"
       padding="20px"
       zIndex={100}
+      position="fixed"
+      bottom={0}
       flex="0 0 auto"
       backgroundColor="#333"
     >
