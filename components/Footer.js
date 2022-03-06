@@ -2,7 +2,7 @@ import { Link as ChakraLink, Flex } from '@chakra-ui/react'
 
 const Footer = () => {
   return (
-    <Flex padding="20px" zIndex={1}>
+    <Flex padding="20px" zIndex={1} position="fixed" bottom={0} left={0}>
       <ChakraLink
         mr="32px"
         color="white"

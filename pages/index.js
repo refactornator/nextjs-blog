@@ -27,6 +27,7 @@ export default function Home() {
           mb="50px"
           direction="column"
           justifyContent="center"
+          minHeight="800px"
           w={{ lg: '680px', sm: '500px', base: '100%' }}
         >
           <Heading
