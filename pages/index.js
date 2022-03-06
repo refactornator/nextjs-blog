@@ -34,7 +34,7 @@ export default function Index() {
         maxHeight="700px"
         width={titleAreaWidth}
       >
-        <Title text="The Tao of Liam."></Title>
+        <Title>The Tao of Liam.</Title>
         <Center marginTop={imageMarginTop}>
           <Image
             src={profilePic}

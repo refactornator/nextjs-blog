@@ -1,7 +1,7 @@
 import React from 'react'
 import { useBreakpointValue, Heading } from '@chakra-ui/react'
 
-const Title = ({ text = '', essayTitle = false }) => {
+const Title = ({ children, essayTitle = false }) => {
   const titleWidth = useBreakpointValue({
     md: '100%',
     lg: '580px',
@@ -24,7 +24,7 @@ const Title = ({ text = '', essayTitle = false }) => {
       fontSize={titleFontSize}
       lineHeight={titleFontSize}
     >
-      {text}
+      {children}
     </Heading>
   )
 }

@@ -24,7 +24,7 @@ export default function Essays({ allEssaysData }) {
     <Flex padding="20px" marginTop="64px" marginBottom="32px">
       <Wrap>
         <WrapItem minWidth="320px">
-          <Title text="Essays"></Title>
+          <Title>Essays</Title>
         </WrapItem>
         <WrapItem>
           <List mt={essayListMarginTop} maxWidth="320px">

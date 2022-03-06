@@ -14,7 +14,7 @@ const FrontMatter = ({ date, title }) => {
       <Text color="white">
         <Date dateString={date} />
       </Text>
-      <Title text={title} essayTitle></Title>
+      <Title essayTitle>{title}</Title>
     </Flex>
   )
 }
