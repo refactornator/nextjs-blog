@@ -32,7 +32,7 @@ export default function Essays({ allEssaysData }) {
           <List mt={['22px', '44px', '64px']} maxWidth="320px">
             {allEssaysData.map(({ slug, frontmatter }) => (
               <ListItem key={slug} mb="32px">
-                <Link href={`/essays/${slug}`}>
+                <Link href={`/essays/${slug}`} passHref>
                   <ChakraLink
                     fontWeight="500"
                     fontSize="16px"

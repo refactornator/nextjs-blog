@@ -55,6 +55,7 @@ export default function App({ Component, pageProps }) {
         >
           <Image
             top={0}
+            alt="gradient mesh cloud"
             right={router.route.startsWith('/essays') ? '75%' : 0}
             height="100%"
             minWidth="600px"

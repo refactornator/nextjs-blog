@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <Flex padding="20px" zIndex={1}>
       <Box>
-        <Link href="/">
+        <Link href="/" passHref>
           <ChakraLink fontSize="16px" color="white" href="/">
             <b>Liam Lindner</b>
             ©2021
@@ -14,7 +14,7 @@ const Header = () => {
       </Box>
       <Spacer />
       <Box>
-        <Link href="/essays">
+        <Link href="/essays" passHref>
           <ChakraLink color="white" href="/essays">
             Essays
           </ChakraLink>
