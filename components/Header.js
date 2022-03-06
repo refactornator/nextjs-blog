@@ -8,10 +8,12 @@ const Header = () => {
       top={0}
       right={0}
       position="fixed"
-      padding="11px"
+      padding="20px"
       zIndex={100}
+      opacity={0.9}
+      backgroundColor="#333"
     >
-      <Box padding="9px" backgroundColor="#333" opacity={0.9}>
+      <Box>
         <Link href="/" passHref>
           <ChakraLink fontSize="16px" color="white" href="/">
             <b>Liam Lindner</b>
@@ -20,7 +22,7 @@ const Header = () => {
         </Link>
       </Box>
       <Spacer />
-      <Box padding="9px" backgroundColor="#333" opacity={0.9}>
+      <Box>
         <Link href="/essays" passHref>
           <ChakraLink color="white" href="/essays">
             Essays

@@ -12,7 +12,7 @@ export default function Index() {
     md: '680px',
   })
   const titleAreaMarginTop = useBreakpointValue({
-    sm: '84px',
+    base: '64px',
   })
   const imageMarginTop = useBreakpointValue({
     sm: '32px',
@@ -22,7 +22,7 @@ export default function Index() {
   return (
     <Flex
       width="100%"
-      paddingLeft="20px"
+      padding="20px"
       flexWrap="wrap"
       justifyContent="center"
       marginBottom="64px"
