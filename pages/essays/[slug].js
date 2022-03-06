@@ -1,8 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
-import { Box, Heading, Text, Flex, Wrap, WrapItem } from '@chakra-ui/react'
+import { useBreakpointValue, Box, Flex, Wrap, WrapItem } from '@chakra-ui/react'
 
-import Date from '../../components/Date'
+import FrontMatter from '../../components/FrontMatter'
 
 import { getEssayData, getAllEssays } from '../../lib/essays'
 
@@ -24,32 +24,24 @@ export const getStaticPaths = async () => {
 }
 
 const Essay = ({ contentHtml, title, date }) => {
+  const contentWidth = useBreakpointValue({
+    md: '100%',
+    lg: '680px',
+  })
+
   return (
     <>
       <Head>
         <title>{title}</title>
       </Head>
-      <Flex px="20px" py="10px">
+      <Flex px="20px" py="10px" marginTop="84px" marginBottom="42px">
         <Wrap>
           <WrapItem>
-            <Flex direction="column">
-              <Text color="white">
-                <Date dateString={date} />
-              </Text>
-              <Heading
-                maxWidth={['100%', '460px', '680px']}
-                fontSize={['36px', '66px', '96px']}
-                lineHeight={['36px', '66px', '96px']}
-                color="white"
-                fontFamily="ivypresto-display, serif"
-              >
-                {title}
-              </Heading>
-            </Flex>
+            <FrontMatter date={date} title={title} />
           </WrapItem>
           <WrapItem>
             <Box
-              maxWidth={['100%', '680px']}
+              maxWidth={contentWidth}
               mt="20px"
               as="article"
               color="white"

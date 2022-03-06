@@ -1,4 +1,4 @@
-import { useMediaQuery, Box, Text, Flex } from '@chakra-ui/react'
+import { Box, Text, Flex } from '@chakra-ui/react'
 import useWindowDimensions from '../hooks/useWindowDimensions'
 
 const items = [
@@ -50,9 +50,9 @@ const TaoItem = ({ title, subtitle, floatAt }) => {
   )
 }
 
-function Clouds() {
+function Tao() {
   return (
-    <Box w="100%" position="relative">
+    <Box w="100%" position="relative" marginTop="84px">
       <TaoItem
         title={items[0].title}
         subtitle={items[0].subtitle}
@@ -87,4 +87,4 @@ function Clouds() {
   )
 }
 
-export default Clouds
+export default Tao

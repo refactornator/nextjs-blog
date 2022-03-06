@@ -4,14 +4,14 @@ const Footer = () => {
   return (
     <Flex
       width="100%"
-      maxWidth="700px"
+      maxWidth="100%"
       padding="20px"
       position="fixed"
       bottom={0}
       left={0}
       opacity={0.9}
       backgroundColor="#333"
-      zIndex={1}
+      zIndex={100}
     >
       <ChakraLink
         mr="32px"

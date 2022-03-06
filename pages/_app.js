@@ -1,6 +1,7 @@
 import './styles.css'
 
 import Head from 'next/head'
+import Script from 'next/script'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
@@ -39,6 +40,19 @@ export default function App({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={siteTitle} />
       </Head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-ME24SJN4RE"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ME24SJN4RE');
+        `}
+      </Script>
       <ChakraProvider theme={theme}>
         <motion.div
           key={router.route}
@@ -59,8 +73,9 @@ export default function App({ Component, pageProps }) {
             right={router.route.startsWith('/essays') ? '75%' : 0}
             height="100%"
             minWidth="600px"
-            minHeight="800px"
-            maxHeight={windowWidth <= 740 ? 820 : '100%'}
+            minHeight="720px"
+            marginTop="64px"
+            maxHeight={windowWidth <= 740 ? 820 : 720}
             position="absolute"
             zIndex={0}
             src={gradientMesh.src}
