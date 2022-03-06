@@ -34,16 +34,13 @@ const theme = extendTheme({
   styles: {
     global: {
       html: {
-        height: '100%',
-        overflow: 'hidden',
+        height: '100vh',
       },
       body: {
-        height: '100%',
-        overflow: 'hidden',
+        height: '100vh',
       },
       '#__next': {
-        height: '100%',
-        overflow: 'hidden',
+        height: '100vh',
       },
       a: {
         color: '#71FFEE',

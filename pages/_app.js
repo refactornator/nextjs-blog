@@ -81,12 +81,7 @@ export default function App({ Component, pageProps }) {
             src={gradientMesh.src}
           />
         </motion.div>
-        <Flex
-          minH="100%"
-          height="100%"
-          direction="column"
-          backgroundColor="#333"
-        >
+        <Flex height="100%" direction="column" backgroundColor="#333">
           <Header />
           <Flex flex="1 1 auto" zIndex={1} overflowY="scroll">
             <Component {...pageProps} />

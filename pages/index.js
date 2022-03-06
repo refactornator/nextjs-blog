@@ -11,10 +11,6 @@ export default function Index() {
     sm: '100%',
     md: '680px',
   })
-  const imageMarginTop = useBreakpointValue({
-    sm: '32px',
-    md: '64px',
-  })
 
   return (
     <Flex
@@ -25,13 +21,12 @@ export default function Index() {
       marginBottom="64px"
     >
       <Flex
-        maxHeight="700px"
         width={titleAreaWidth}
         direction="column"
         justifyContent="flex-start"
       >
         <Title>The Tao of Liam.</Title>
-        <Center marginTop={imageMarginTop}>
+        <Center marginY="26px">
           <Image
             src={profilePic}
             alt="Picture of the author"
