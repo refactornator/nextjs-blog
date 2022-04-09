@@ -83,7 +83,7 @@ export default function App({ Component, pageProps }) {
         </motion.div>
         <Flex height="100%" direction="column" backgroundColor="#333">
           <Header />
-          <Flex flex="1 0 auto" zIndex={1} marginY="64px" overflowY="scroll">
+          <Flex flex="1 0 auto" zIndex={1} marginY="64px">
             <Component {...pageProps} />
           </Flex>
           <Footer />
