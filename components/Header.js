@@ -2,6 +2,9 @@ import Link from 'next/link'
 import { Box, Flex, Link as ChakraLink, Spacer } from '@chakra-ui/react'
 
 const Header = () => {
+  const today = new Date()
+  const year = today.getFullYear()
+
   return (
     <Flex
       width="100%"
@@ -15,8 +18,7 @@ const Header = () => {
       <Box>
         <Link href="/" passHref>
           <ChakraLink fontSize="16px" color="white" href="/">
-            <b>Liam Lindner</b>
-            ©2021
+            <b>Liam Lindner</b>©{year}
           </ChakraLink>
         </Link>
       </Box>
