@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import Head from 'next/head'
+import MuxPlayer from '@mux/mux-player-react'
+import { getMDXComponent } from 'mdx-bundler/client'
 import { useBreakpointValue, Box, Flex, Wrap, WrapItem } from '@chakra-ui/react'
 
 import FrontMatter from '../../components/FrontMatter'
@@ -23,11 +25,14 @@ export const getStaticPaths = async () => {
   }
 }
 
-const Essay = ({ contentHtml, title, date }) => {
+const Essay = ({ code, frontmatter }) => {
+  const Component = useMemo(() => getMDXComponent(code), [code])
   const contentWidth = useBreakpointValue({
     md: '100%',
     lg: '680px',
   })
+
+  const { date, title } = frontmatter
 
   return (
     <>
@@ -49,7 +54,9 @@ const Essay = ({ contentHtml, title, date }) => {
               lineHeight="28px"
               className={styles.container}
             >
-              <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+              <Component components={{
+                MuxPlayer
+              }} />
             </Box>
           </WrapItem>
         </Wrap>
