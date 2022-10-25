@@ -42,7 +42,7 @@ const theme = extendTheme({
       },
       '#__next': {},
       a: {
-        color: '#71FFEE',
+        color: 'white',
         textDecoration: 'none',
       },
       'a:hover': {

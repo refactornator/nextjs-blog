@@ -22,10 +22,11 @@ export default function Index() {
         <Title>The Tao of Liam.</Title>
         <Center marginY="26px">
           <Image
+            priority
             src={profilePic}
             alt="Picture of the author"
-            width="260px"
-            height="260px"
+            width={260}
+            height={260}
           />
         </Center>
       </Flex>

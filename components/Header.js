@@ -16,19 +16,13 @@ const Header = () => {
       backgroundColor="#333"
     >
       <Box>
-        <Link href="/" passHref>
-          <ChakraLink fontSize="16px" color="white" href="/">
-            <b>Liam Lindner</b>©{year}
-          </ChakraLink>
+        <Link href="/">
+          <b>Liam Lindner</b> © {year}
         </Link>
       </Box>
       <Spacer />
       <Box>
-        <Link href="/essays" passHref>
-          <ChakraLink color="white" href="/essays">
-            Essays
-          </ChakraLink>
-        </Link>
+        <Link href="/essays">Essays</Link>
         <ChakraLink
           ml="32px"
           color="white"
