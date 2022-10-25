@@ -2,7 +2,6 @@ import Link from 'next/link'
 import {
   useBreakpointValue,
   Flex,
-  Link as ChakraLink,
   List,
   ListItem,
   Wrap,
@@ -30,15 +29,14 @@ export default function Essays({ allEssaysData }) {
           <List mt={essayListMarginTop} maxWidth="320px">
             {allEssaysData.map(({ slug, frontmatter }) => (
               <ListItem key={slug} mb="32px">
-                <Link href={`/essays/${slug}`} passHref>
-                  <ChakraLink
-                    fontWeight="500"
-                    fontSize="16px"
-                    lineHeight="19px"
-                    color="white"
-                  >
-                    {frontmatter.title} →
-                  </ChakraLink>
+                <Link
+                  href={`/essays/${slug}`}
+                  style={{
+                    fontWeight: '500',
+                    lineHeight: '19px',
+                  }}
+                >
+                  {frontmatter.title} →
                 </Link>
               </ListItem>
             ))}
