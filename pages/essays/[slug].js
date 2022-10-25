@@ -54,9 +54,13 @@ const Essay = ({ code, frontmatter }) => {
               lineHeight="28px"
               className={styles.container}
             >
-              <Component components={{
-                MuxPlayer
-              }} />
+              <Component
+                components={{
+                  MuxPlayer: (props) => (
+                    <MuxPlayer streamType="on-demand" {...props} />
+                  ),
+                }}
+              />
             </Box>
           </WrapItem>
         </Wrap>
