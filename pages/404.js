@@ -1,31 +1,38 @@
-import { Box, Center, Heading, VStack } from '@chakra-ui/react'
-import ReactPlayer from 'react-player'
+import styled from '@emotion/styled'
+import MuxPlayer from '@mux/mux-player-react'
+
+const Center = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+const Container = styled.div`
+  width: 100%;
+`
+
+const Heading = styled.div`
+  color: #ec5252;
+  margin: 42px 0;
+  font-size: 42px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 800;
+`
 
 export default function Custom404() {
   return (
-    <VStack w="100%" mb="40px">
+    <Container>
       <Center>
-        <Heading
-          size="xl"
-          fontFamily="courier"
-          fontWeight="extrabold"
-          marginY="42px"
-        >
-          404: Page Not Found
-        </Heading>
+        <Heading>404: Page Not Found</Heading>
       </Center>
 
-      <Box minW="266px" minH="470px">
-        <ReactPlayer
-          width="266px"
-          height="470px"
-          url={[{ src: '/videos/intro.mp4', type: 'video/mp4' }]}
-          playing
-          controls
-          light
-          loop
-        />
-      </Box>
-    </VStack>
+      <MuxPlayer
+        loop
+        autoPlay="muted"
+        streamType="on-demand"
+        playbackId="bWRXSnGF00Q006Zty023SHQqdA7Zd5FIb02O3600q01yoO6lo"
+        metadataVideoTitle="404-confetti"
+      />
+    </Container>
   )
 }
