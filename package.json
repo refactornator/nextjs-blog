@@ -9,15 +9,15 @@
     "start": "next start"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.3.6",
-    "@emotion/react": "^11.10.4",
-    "@emotion/styled": "^11.10.4",
+    "@chakra-ui/react": "^2.3.7",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@mux/mux-player-react": "^1.3.0",
     "date-fns": "^2.29.3",
-    "framer-motion": "^7.6.1",
+    "framer-motion": "^7.6.4",
     "gray-matter": "^4.0.3",
     "mdx-bundler": "^9.0.1",
-    "next": "^13.0.0",
+    "next": "^13.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.6.0",
@@ -25,9 +25,9 @@
   },
   "devDependencies": {
     "@mux/cli": "^0.8.0",
-    "@netlify/plugin-nextjs": "^4.28.1",
+    "@netlify/plugin-nextjs": "^4.28.4",
     "eslint": "8.26.0",
-    "eslint-config-next": "13.0.0",
+    "eslint-config-next": "13.0.2",
     "prettier": "2.7.1"
   },
   "homepage": "https://refactornator.com",
