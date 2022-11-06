@@ -1,26 +1,50 @@
 import Image from 'next/image'
-import { Box, Flex, Center, useBreakpointValue } from '@chakra-ui/react'
+import styled from '@emotion/styled'
 
-import Title from '../components/Title'
 import Tao from '../components/Tao'
+import SectionTitle from '../components/common/SectionTitle'
 
 import profilePic from '../public/images/garden-headshot.jpg'
 
-export default function Index() {
-  const titleAreaWidth = useBreakpointValue({
-    sm: '100%',
-    md: '680px',
-  })
+const Container = styled.div`
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+`
 
+const GrowBox = styled.div`
+  flex-grow: 1;
+`
+
+const TitleArea = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  @media (min-width: 30em) {
+    width: 100%;
+  }
+  @media (min-width: 48em) {
+    width: 680px;
+  }
+`
+
+const Center = styled.div`
+  margin: 26px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export default function Index() {
   return (
-    <Flex width="100%" padding="20px" flexWrap="wrap" justifyContent="center">
-      <Flex
-        width={titleAreaWidth}
-        direction="column"
-        justifyContent="flex-start"
-      >
-        <Title>The Tao of Liam.</Title>
-        <Center marginY="26px">
+    <Container>
+      <TitleArea>
+        <SectionTitle>The Tao of Liam.</SectionTitle>
+        <Center>
           <Image
             priority
             src={profilePic}
@@ -29,10 +53,10 @@ export default function Index() {
             height={260}
           />
         </Center>
-      </Flex>
-      <Box flexGrow={1}>
+      </TitleArea>
+      <GrowBox>
         <Tao />
-      </Box>
-    </Flex>
+      </GrowBox>
+    </Container>
   )
 }

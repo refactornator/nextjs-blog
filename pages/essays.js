@@ -1,49 +1,64 @@
 import Link from 'next/link'
-import {
-  useBreakpointValue,
-  Flex,
-  List,
-  ListItem,
-  Wrap,
-  WrapItem,
-} from '@chakra-ui/react'
+import styled from '@emotion/styled'
 
-import Title from '../components/Title'
+import SectionTitle from '../components/common/SectionTitle'
 
 import { getAllEssays } from '../lib/essays'
 
-export default function Essays({ allEssaysData }) {
-  const essayListMarginTop = useBreakpointValue({
-    sm: '22px',
-    md: '44px',
-    lg: '66px',
-  })
+const Container = styled.div`
+  display: flex;
+  padding: 20px;
 
+  @media (min-width: 30em) {
+    flex-direction: column;
+  }
+
+  @media (min-width: 48em) {
+    flex-direction: row;
+  }
+`
+
+const BoldLink = styled(Link)`
+  font-weight: 500;
+  line-height: 19px;
+`
+
+const ListItem = styled.li`
+  margin-bottom: 32px;
+`
+
+const List = styled.ul`
+  max-width: 320px;
+  list-style-type: none;
+
+  @media (min-width: 30em) {
+    margin-top: 22px;
+    margin-left: 22px;
+  }
+
+  @media (min-width: 48em) {
+    margin-top: 44px;
+    margin-left: 44px;
+  }
+
+  @media (min-width: 62em) {
+    margin-top: 66px;
+    margin-left: 66px;
+  }
+`
+
+export default function Essays({ allEssaysData }) {
   return (
-    <Flex padding="20px">
-      <Wrap>
-        <WrapItem minWidth="320px">
-          <Title>Essays</Title>
-        </WrapItem>
-        <WrapItem>
-          <List mt={essayListMarginTop} maxWidth="320px">
-            {allEssaysData.map(({ slug, frontmatter }) => (
-              <ListItem key={slug} mb="32px">
-                <Link
-                  href={`/essays/${slug}`}
-                  style={{
-                    fontWeight: '500',
-                    lineHeight: '19px',
-                  }}
-                >
-                  {frontmatter.title} →
-                </Link>
-              </ListItem>
-            ))}
-          </List>
-        </WrapItem>
-      </Wrap>
-    </Flex>
+    <Container>
+      <SectionTitle>Essays</SectionTitle>
+      <List>
+        {allEssaysData.map(({ slug, frontmatter }) => (
+          <ListItem key={slug}>
+            <BoldLink href={`/essays/${slug}`}>{frontmatter.title} →</BoldLink>
+          </ListItem>
+        ))}
+      </List>
+    </Container>
   )
 }
 

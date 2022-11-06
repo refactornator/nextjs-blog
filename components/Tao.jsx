@@ -1,5 +1,4 @@
-import { Box, Text, Flex } from '@chakra-ui/react'
-import useWindowDimensions from '../hooks/useWindowDimensions'
+import styled from '@emotion/styled'
 
 const items = [
   {
@@ -32,27 +31,57 @@ const items = [
   },
 ]
 
+const Container = styled.div`
+  width: 100%;
+  position: relative;
+`
+
+const TaoItemContainer = styled.div`
+  display: flex;
+  min-width: 200px;
+
+  @media (min-width: 30em) {
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  @media (min-width: 48em) {
+    max-width: ${({ floatAt }) => floatAt};
+    justify-content: flex-end;
+  }
+`
+
+const Text = styled.p`
+  color: white;
+`
+
+const TextBox = styled.div`
+  margin-bottom: 12px;
+
+  @media (min-width: 30em) {
+    width: 265px;
+  }
+
+  @media (min-width: 48em) {
+    width: 200px;
+  }
+`
+
 const TaoItem = ({ title, subtitle, floatAt }) => {
-  const { width } = useWindowDimensions()
-  const isLargerThan480 = width >= 480
   return (
-    <Flex
-      minWidth="200px"
-      maxWidth={isLargerThan480 ? floatAt : '100%'}
-      justifyContent={isLargerThan480 ? 'flex-end' : 'center'}
-    >
-      <Box w={isLargerThan480 ? '200px' : '265px'} mb="12px">
-        <Text color="white">
+    <TaoItemContainer floatAt={floatAt}>
+      <TextBox>
+        <Text>
           {title} <span style={{ opacity: '50%' }}>{subtitle}</span>
         </Text>
-      </Box>
-    </Flex>
+      </TextBox>
+    </TaoItemContainer>
   )
 }
 
-function Tao() {
+export default function Tao() {
   return (
-    <Box w="100%" position="relative">
+    <Container>
       <TaoItem
         title={items[0].title}
         subtitle={items[0].subtitle}
@@ -83,8 +112,6 @@ function Tao() {
         subtitle={items[5].subtitle}
         floatAt="80%"
       />
-    </Box>
+    </Container>
   )
 }
-
-export default Tao

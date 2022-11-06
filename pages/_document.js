@@ -1,11 +1,27 @@
-import { ColorModeScript } from '@chakra-ui/react'
-import Document, { Html, Head, Main, NextScript } from 'next/document'
 import styled from '@emotion/styled'
-
-import theme from '../utils/theme'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 const Body = styled.body`
+  color: white;
+  height: 100vh;
+  min-height: -webkit-fill-available;
   background-color: #333;
+  font-family: Neue Haas Grotesk Display Pro, Helvetica Neue, sans-serif,
+    -apple-system;
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    :hover {
+      text-decoration: underline;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
 `
 
 export default class MyDocument extends Document {
@@ -14,7 +30,6 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head />
         <Body>
-          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
           <NextScript />
         </Body>
