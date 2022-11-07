@@ -37,6 +37,7 @@ const Container = styled.div`
 const BackgroundImage = styled(Image)`
   top: 0;
   right: ${({ offset }) => (offset === 'true' ? '75%' : 0)};
+  width: auto;
   height: 100%;
   margin-top: 64px;
   min-width: 600px;
@@ -97,6 +98,7 @@ export default function App({ Component, pageProps }) {
         }}
       >
         <BackgroundImage
+          priority
           offset={router.route.startsWith('/essays').toString()}
           alt="gradient mesh cloud"
           src={gradientMesh}
