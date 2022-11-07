@@ -7,8 +7,6 @@ const Body = styled.body`
   height: 100vh;
   min-height: -webkit-fill-available;
   background-color: #333;
-  font-family: Neue Haas Grotesk Display Pro, Helvetica Neue, sans-serif,
-    -apple-system;
 
   a {
     color: white;
@@ -33,6 +31,8 @@ const Body = styled.body`
     margin-block-end: 0;
 
     font-family: ivypresto-display, serif;
+    font-style: normal;
+    font-weight: 400;
 
     @media (min-width: 30em) {
       font-size: 2.75em;

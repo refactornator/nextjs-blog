@@ -1,8 +1,7 @@
-import './styles.css'
-
 import Head from 'next/head'
 import Image from 'next/image'
 import Script from 'next/script'
+import localFont from '@next/font/local'
 import styled from '@emotion/styled'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
@@ -16,6 +15,10 @@ import Footer from '../components/Footer'
 import gradientMesh from '../public/images/gradient-mesh.png'
 
 export const siteTitle = "Liam Lindner's Blog, 2 n's"
+
+const neueHaasDisplayProFont = localFont({
+  src: '../fonts/NeueHaasDisplayPro-Medium.woff',
+})
 
 const Page = styled.main`
   display: flex;
@@ -99,7 +102,7 @@ export default function App({ Component, pageProps }) {
           src={gradientMesh}
         />
       </motion.div>
-      <Page>
+      <Page className={neueHaasDisplayProFont.className}>
         <Header />
         <Container>
           <Component {...pageProps} />
