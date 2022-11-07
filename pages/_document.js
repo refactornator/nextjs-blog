@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 const Body = styled.body`
+  margin: 0;
   color: white;
   height: 100vh;
   min-height: -webkit-fill-available;
