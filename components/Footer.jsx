@@ -1,12 +1,12 @@
 import styled from '@emotion/styled'
 
 const Container = styled.div`
-  flex: 0 0 auto;
+  bottom: 0;
   width: 100%;
+  flex: 0 0 auto;
   padding: 20px;
   z-index: 100;
   position: fixed;
-  bottom: 0;
   background-color: #333;
 `
 

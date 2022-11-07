@@ -9,20 +9,18 @@ import FrontMatter from '../../components/FrontMatter'
 import { getEssayData, getAllEssays } from '../../lib/essays'
 
 const Container = styled.div`
+  width: 100%;
   display: flex;
-  padding: 10px 20px;
+  padding: 20px;
+  flex-direction: column;
 
-  @media (min-width: 30em) {
-    flex-direction: column;
-  }
-
-  @media (min-width: 80em) {
+  @media (min-width: 64em) {
     flex-direction: row;
   }
 `
 
 const Content = styled.article`
-  margin-top: 20px;
+  margin: 0 auto;
   font-size: 20px;
   line-height: 28px;
 

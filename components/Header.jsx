@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styled from '@emotion/styled'
 
-const Container = styled.div`
+const Flex = styled.div`
   top: 0;
   width: 100%;
   display: flex;
@@ -22,7 +22,7 @@ export default function Header() {
   const year = today.getFullYear()
 
   return (
-    <Container>
+    <Flex>
       <div>
         <Link href="/">
           <b>Liam Lindner</b> © {year}
@@ -34,6 +34,6 @@ export default function Header() {
           Github
         </ExternalLink>
       </div>
-    </Container>
+    </Flex>
   )
 }

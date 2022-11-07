@@ -2,7 +2,6 @@ import Image from 'next/image'
 import styled from '@emotion/styled'
 
 import Tao from '../components/Tao'
-import SectionTitle from '../components/common/SectionTitle'
 
 import profilePic from '../public/images/garden-headshot.jpg'
 
@@ -18,16 +17,14 @@ const GrowBox = styled.div`
   flex-grow: 1;
 `
 
-const TitleArea = styled.div`
+const IntroArea = styled.div`
   display: flex;
+  max-width: 500px;
   flex-direction: column;
   justify-content: flex-start;
 
   @media (min-width: 30em) {
     width: 100%;
-  }
-  @media (min-width: 48em) {
-    width: 680px;
   }
 `
 
@@ -42,8 +39,8 @@ const Center = styled.div`
 export default function Index() {
   return (
     <Container>
-      <TitleArea>
-        <SectionTitle>The Tao of Liam.</SectionTitle>
+      <IntroArea>
+        <h1>The Tao of Liam.</h1>
         <Center>
           <Image
             priority
@@ -53,7 +50,7 @@ export default function Index() {
             height={260}
           />
         </Center>
-      </TitleArea>
+      </IntroArea>
       <GrowBox>
         <Tao />
       </GrowBox>

@@ -1,17 +1,13 @@
 import Link from 'next/link'
 import styled from '@emotion/styled'
 
-import SectionTitle from '../components/common/SectionTitle'
-
 import { getAllEssays } from '../lib/essays'
 
 const Container = styled.div`
+  width: 100%;
   display: flex;
   padding: 20px;
-
-  @media (min-width: 30em) {
-    flex-direction: column;
-  }
+  flex-direction: column;
 
   @media (min-width: 48em) {
     flex-direction: row;
@@ -50,7 +46,7 @@ const List = styled.ul`
 export default function Essays({ allEssaysData }) {
   return (
     <Container>
-      <SectionTitle>Essays</SectionTitle>
+      <h1>Essays</h1>
       <List>
         {allEssaysData.map(({ slug, frontmatter }) => (
           <ListItem key={slug}>
