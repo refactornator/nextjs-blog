@@ -13,7 +13,6 @@ const Container = styled.div`
 `
 
 const ExternalLink = styled.a`
-  color: white;
   margin-left: 32px;
   margin-right: 42px;
 `

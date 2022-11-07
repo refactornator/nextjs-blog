@@ -10,16 +10,16 @@ const Container = styled.div`
   background-color: #333;
 `
 
-const ExternalLink = styled.a`
-  color: white;
-`
-
 export default function Footer() {
   return (
     <Container>
-      <ExternalLink href="https://linkedin.com/in/wlindner" target="_blank">
+      <a
+        href="https://linkedin.com/in/wlindner"
+        target="_blank"
+        rel="noreferrer"
+      >
         Linkedin
-      </ExternalLink>
+      </a>
     </Container>
   )
 }

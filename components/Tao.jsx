@@ -51,10 +51,6 @@ const TaoItemContainer = styled.div`
   }
 `
 
-const Text = styled.p`
-  color: white;
-`
-
 const TextBox = styled.div`
   margin-bottom: 12px;
 
@@ -71,9 +67,9 @@ const TaoItem = ({ title, subtitle, floatAt }) => {
   return (
     <TaoItemContainer floatAt={floatAt}>
       <TextBox>
-        <Text>
+        <p>
           {title} <span style={{ opacity: '50%' }}>{subtitle}</span>
-        </Text>
+        </p>
       </TextBox>
     </TaoItemContainer>
   )

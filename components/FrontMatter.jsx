@@ -4,7 +4,6 @@ import styled from '@emotion/styled'
 import Date from './Date'
 
 const Container = styled.div`
-  color: white;
   display: flex;
   flex-direction: column;
 `
