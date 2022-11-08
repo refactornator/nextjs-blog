@@ -13,7 +13,6 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 import gradientMesh from '../public/images/gradient-mesh.png'
-import { css, Global } from '@emotion/react'
 
 export const siteTitle = "Liam Lindner's Blog, 2 n's"
 
@@ -22,10 +21,26 @@ const neueHaasDisplayProFont = localFont({
 })
 
 const Page = styled.main`
+  color: white;
   display: flex;
   height: 100%;
   flex-direction: column;
   background-color: #333;
+  font-family: ${neueHaasDisplayProFont.style.fontFamily};
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    :hover {
+      text-decoration: underline;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
 `
 
 const Container = styled.div`
@@ -85,23 +100,6 @@ export default function App({ Component, pageProps }) {
           gtag('config', 'G-ME24SJN4RE');
         `}
       </Script>
-      <Global
-        styles={css`
-          a {
-            color: white;
-            text-decoration: none;
-
-            :hover {
-              text-decoration: underline;
-            }
-          }
-
-          img {
-            max-width: 100%;
-            display: block;
-          }
-        `}
-      ></Global>
       <motion.div
         key={router.route}
         initial="initial"
@@ -122,7 +120,7 @@ export default function App({ Component, pageProps }) {
           src={gradientMesh}
         />
       </motion.div>
-      <Page className={neueHaasDisplayProFont.className}>
+      <Page>
         <Header />
         <Container>
           <Component {...pageProps} />
