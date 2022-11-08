@@ -2,6 +2,7 @@ import Image from 'next/image'
 import styled from '@emotion/styled'
 
 import Tao from '../components/Tao'
+import { ShortHeading } from '../components/common/Headings'
 
 import profilePic from '../public/images/garden-headshot.jpg'
 
@@ -40,7 +41,7 @@ export default function Index() {
   return (
     <Container>
       <IntroArea>
-        <h1>The Tao of Liam.</h1>
+        <ShortHeading>The Tao of Liam.</ShortHeading>
         <Center>
           <Image
             priority

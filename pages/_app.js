@@ -21,10 +21,6 @@ const neueHaasDisplayProFont = localFont({
   src: '../fonts/NeueHaasDisplayPro-Medium.woff',
 })
 
-const ivyprestoDisplayFont = localFont({
-  src: '../fonts/ivypresto-display.woff',
-})
-
 const Page = styled.main`
   display: flex;
   height: 100%;
@@ -103,35 +99,6 @@ export default function App({ Component, pageProps }) {
           img {
             max-width: 100%;
             display: block;
-          }
-
-          h1,
-          h2,
-          h3 {
-            width: 100%;
-            max-width: 420px;
-            margin-block-start: 0;
-            margin-block-end: 0;
-
-            font-family: ${ivyprestoDisplayFont.style.fontFamily};
-            font-style: normal;
-            font-weight: 400;
-
-            @media (min-width: 30em) {
-              font-size: 2.75em;
-            }
-
-            @media (min-width: 48em) {
-              font-size: 3em;
-            }
-
-            @media (min-width: 62em) {
-              font-size: 5em;
-            }
-
-            @media (min-width: 80em) {
-              font-size: 6em;
-            }
           }
         `}
       ></Global>

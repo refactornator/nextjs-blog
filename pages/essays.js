@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import styled from '@emotion/styled'
 
+import { ShortHeading } from '../components/common/Headings'
+
 import { getAllEssays } from '../lib/essays'
 
 const Container = styled.div`
@@ -46,7 +48,7 @@ const List = styled.ul`
 export default function Essays({ allEssaysData }) {
   return (
     <Container>
-      <h1>Essays</h1>
+      <ShortHeading>Essays</ShortHeading>
       <List>
         {allEssaysData.map(({ slug, frontmatter }) => (
           <ListItem key={slug}>

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 import Date from './Date'
+import { LongHeading } from './common/Headings'
 
 const Container = styled.div`
   display: flex;
@@ -12,7 +13,7 @@ const FrontMatter = ({ date, title }) => {
   return (
     <Container>
       <Date dateString={date} />
-      <h1>{title}</h1>
+      <LongHeading>{title}</LongHeading>
     </Container>
   )
 }
