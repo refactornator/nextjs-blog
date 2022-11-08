@@ -1,13 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Script from 'next/script'
 import localFont from '@next/font/local'
 import styled from '@emotion/styled'
-import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
-
-import * as gtag from '../lib/gtag'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -25,7 +21,6 @@ const Page = styled.main`
   display: flex;
   height: 100%;
   flex-direction: column;
-  background-color: #333;
   font-family: ${neueHaasDisplayProFont.style.fontFamily};
 
   a {
@@ -68,17 +63,7 @@ const BackgroundImage = styled(Image)`
 `
 
 export default function App({ Component, pageProps }) {
-  const router = useRouter()
-
-  useEffect(() => {
-    const handleRouteChange = (url) => {
-      gtag.pageview(url)
-    }
-    router.events.on('routeChangeComplete', handleRouteChange)
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [router.events])
+  const { route } = useRouter()
 
   return (
     <>
@@ -87,21 +72,8 @@ export default function App({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={siteTitle} />
       </Head>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-ME24SJN4RE"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-ME24SJN4RE');
-        `}
-      </Script>
       <motion.div
-        key={router.route}
+        key={route}
         initial="initial"
         animate="animate"
         variants={{
@@ -115,7 +87,7 @@ export default function App({ Component, pageProps }) {
       >
         <BackgroundImage
           priority
-          offset={router.route.startsWith('/essays').toString()}
+          offset={route.startsWith('/essays').toString()}
           alt="gradient mesh cloud"
           src={gradientMesh}
         />
