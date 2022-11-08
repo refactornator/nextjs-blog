@@ -13,11 +13,16 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 import gradientMesh from '../public/images/gradient-mesh.png'
+import { css, Global } from '@emotion/react'
 
 export const siteTitle = "Liam Lindner's Blog, 2 n's"
 
 const neueHaasDisplayProFont = localFont({
   src: '../fonts/NeueHaasDisplayPro-Medium.woff',
+})
+
+const ivyprestoDisplayFont = localFont({
+  src: '../fonts/ivypresto-display.woff',
 })
 
 const Page = styled.main`
@@ -84,6 +89,52 @@ export default function App({ Component, pageProps }) {
           gtag('config', 'G-ME24SJN4RE');
         `}
       </Script>
+      <Global
+        styles={css`
+          a {
+            color: white;
+            text-decoration: none;
+
+            :hover {
+              text-decoration: underline;
+            }
+          }
+
+          img {
+            max-width: 100%;
+            display: block;
+          }
+
+          h1,
+          h2,
+          h3 {
+            width: 100%;
+            max-width: 420px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+
+            font-family: ${ivyprestoDisplayFont.style.fontFamily};
+            font-style: normal;
+            font-weight: 400;
+
+            @media (min-width: 30em) {
+              font-size: 2.75em;
+            }
+
+            @media (min-width: 48em) {
+              font-size: 3em;
+            }
+
+            @media (min-width: 62em) {
+              font-size: 5em;
+            }
+
+            @media (min-width: 80em) {
+              font-size: 6em;
+            }
+          }
+        `}
+      ></Global>
       <motion.div
         key={router.route}
         initial="initial"
