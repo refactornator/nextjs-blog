@@ -4,6 +4,7 @@ import localFont from '@next/font/local'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
+import { Analytics } from '@vercel/analytics/react'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -99,6 +100,7 @@ export default function App({ Component, pageProps }) {
         </Container>
         <Footer />
       </Page>
+      <Analytics />
     </>
   )
 }
