@@ -20,12 +20,16 @@ const GrowBox = styled.div`
 
 const IntroArea = styled.div`
   display: flex;
-  max-width: 500px;
   flex-direction: column;
   justify-content: flex-start;
 
   @media (min-width: 30em) {
     width: 100%;
+    max-width: 260px;
+  }
+
+  @media (min-width: 48em) {
+    max-width: 520px;
   }
 `
 
