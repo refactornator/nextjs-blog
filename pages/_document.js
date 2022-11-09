@@ -1,10 +1,10 @@
-import { ColorModeScript } from '@chakra-ui/react'
-import Document, { Html, Head, Main, NextScript } from 'next/document'
 import styled from '@emotion/styled'
-
-import theme from '../utils/theme'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 const Body = styled.body`
+  margin: 0;
+  height: 100vh;
+  min-height: -webkit-fill-available;
   background-color: #333;
 `
 
@@ -14,7 +14,6 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head />
         <Body>
-          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
           <NextScript />
         </Body>
