@@ -14,7 +14,7 @@ export default function Footer() {
   return (
     <Container>
       <a
-        href="https://linkedin.com/in/wlindner"
+        href="https://linkedin.com/in/liam-lindner"
         target="_blank"
         rel="noreferrer"
       >
