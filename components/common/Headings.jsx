@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import localFont from '@next/font/local'
+import localFont from 'next/font/local'
 
 const ivyprestoDisplayFont = localFont({
   src: '../../fonts/ivypresto-display.woff',

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import localFont from '@next/font/local'
+import localFont from 'next/font/local'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'

@@ -12,7 +12,6 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mux/mux-player-react": "^1.10.0",
-    "@next/font": "^13.3.0",
     "@vercel/analytics": "^1.0.0",
     "date-fns": "^2.29.3",
     "esbuild": "^0.17.17",
