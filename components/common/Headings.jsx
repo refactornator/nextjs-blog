@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import localFont from '@next/font/local'
+import localFont from 'next/font/local'
 
 const ivyprestoDisplayFont = localFont({
   src: '../../fonts/ivypresto-display.woff',
@@ -23,6 +23,7 @@ export const ShortHeading = styled(BaseHeading)`
 
   @media (min-width: 80em) {
     font-size: 6em;
+    text-align: center;
   }
 `
 

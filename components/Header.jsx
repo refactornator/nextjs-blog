@@ -12,9 +12,21 @@ const Flex = styled.div`
   justify-content: space-between;
 `
 
-const ExternalLink = styled.a`
-  margin-left: 32px;
-  margin-right: 42px;
+const Name = styled.div`
+  width: 100%;
+`
+
+const Menu = styled.div`
+  width: 100%;
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 40px;
+
+  a {
+    display: block;
+  }
 `
 
 export default function Header() {
@@ -23,17 +35,20 @@ export default function Header() {
 
   return (
     <Flex>
-      <div>
+      <Name>
         <Link href="/">
           <b>Liam Lindner</b> © {year}
         </Link>
-      </div>
-      <div>
-        <Link href="/essays">Essays</Link>
-        <ExternalLink href="https://github.com/refactornator" target="_blank">
+      </Name>
+      <Menu>
+        <Link href="/topics">Topics</Link>
+        <a href="https://github.com/refactornator" target="_blank">
           Github
-        </ExternalLink>
-      </div>
+        </a>
+        <a href="https://linkedin.com/in/liam-lindner" target="_blank">
+          Linkedin
+        </a>
+      </Menu>
     </Flex>
   )
 }

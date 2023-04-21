@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 
 import { ShortHeading } from '../components/common/Headings'
 
-import { getAllEssays } from '../lib/essays'
+import { getAllTopics } from '../lib/topics'
 
 const Container = styled.div`
   width: 100%;
@@ -45,14 +45,14 @@ const List = styled.ul`
   }
 `
 
-export default function Essays({ allEssaysData }) {
+export default function Topics({ allTopics }) {
   return (
     <Container>
-      <ShortHeading>Essays</ShortHeading>
+      <ShortHeading>Topics</ShortHeading>
       <List>
-        {allEssaysData.map(({ slug, frontmatter }) => (
+        {allTopics.map(({ slug, frontmatter }) => (
           <ListItem key={slug}>
-            <BoldLink href={`/essays/${slug}`}>{frontmatter.title} →</BoldLink>
+            <BoldLink href={`/topic/${slug}`}>{frontmatter.title} →</BoldLink>
           </ListItem>
         ))}
       </List>
@@ -61,10 +61,10 @@ export default function Essays({ allEssaysData }) {
 }
 
 export async function getStaticProps() {
-  const allEssaysData = getAllEssays()
+  const allTopics = getAllTopics()
   return {
     props: {
-      allEssaysData,
+      allTopics,
     },
   }
 }

@@ -1,13 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import localFont from '@next/font/local'
+import localFont from 'next/font/local'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 import { Analytics } from '@vercel/analytics/react'
 
 import Header from '../components/Header'
-import Footer from '../components/Footer'
 
 import gradientMesh from '../public/images/gradient-mesh.png'
 
@@ -53,14 +52,9 @@ const BackgroundImage = styled(Image)`
   height: 100%;
   margin-top: 64px;
   min-width: 600px;
-  min-height: 720px;
+  max-height: calc(100% - 64px);
   position: absolute;
   z-index: 0;
-
-  max-height: 720px;
-  @media (min-width: 48em) {
-    max-height: 820px;
-  }
 `
 
 export default function App({ Component, pageProps }) {
@@ -88,7 +82,7 @@ export default function App({ Component, pageProps }) {
       >
         <BackgroundImage
           priority
-          offset={route.startsWith('/essays').toString()}
+          offset={route.startsWith('/topics').toString()}
           alt="gradient mesh cloud"
           src={gradientMesh}
         />
@@ -98,7 +92,6 @@ export default function App({ Component, pageProps }) {
         <Container>
           <Component {...pageProps} />
         </Container>
-        <Footer />
       </Page>
       <Analytics />
     </>

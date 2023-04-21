@@ -6,7 +6,7 @@ import { getMDXComponent } from 'mdx-bundler/client'
 
 import FrontMatter from '../../components/FrontMatter'
 
-import { getEssayData, getAllEssays } from '../../lib/essays'
+import { getTopic, getAllTopics } from '../../lib/topics'
 
 const Container = styled.div`
   width: 100%;
@@ -70,7 +70,7 @@ const Content = styled.article`
   }
 `
 
-export default function Essay({ code, frontmatter: { date, title } }) {
+export default function Topic({ code, frontmatter: { date, title } }) {
   const MDXComponent = useMemo(() => getMDXComponent(code), [code])
 
   return (
@@ -95,14 +95,14 @@ export default function Essay({ code, frontmatter: { date, title } }) {
 }
 
 export const getStaticProps = async ({ params }) => {
-  const post = await getEssayData(params.slug)
+  const topic = await getTopic(params.slug)
   return {
-    props: { ...post },
+    props: { ...topic },
   }
 }
 
 export const getStaticPaths = async () => {
-  const paths = getAllEssays().map(({ slug }) => ({ params: { slug } }))
+  const paths = getAllTopics().map(({ slug }) => ({ params: { slug } }))
   return {
     paths,
     fallback: false,
