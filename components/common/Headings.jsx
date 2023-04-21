@@ -23,6 +23,7 @@ export const ShortHeading = styled(BaseHeading)`
 
   @media (min-width: 80em) {
     font-size: 6em;
+    text-align: center;
   }
 `
 
