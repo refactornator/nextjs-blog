@@ -81,7 +81,7 @@ export default function Topic({ code, frontmatter: { date, title } }) {
       <Container>
         <FrontMatter date={date} title={title} />
         <Content>
-        <MDXComponent
+          <MDXComponent
             components={{
               MuxPlayer: (props) => (
                 <MuxPlayer streamType="on-demand" {...props} />
