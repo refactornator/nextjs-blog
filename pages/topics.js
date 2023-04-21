@@ -52,7 +52,7 @@ export default function Topics({ allTopics }) {
       <List>
         {allTopics.map(({ slug, frontmatter }) => (
           <ListItem key={slug}>
-            <BoldLink href={`/topics/${slug}`}>{frontmatter.title} →</BoldLink>
+            <BoldLink href={`/topic/${slug}`}>{frontmatter.title} →</BoldLink>
           </ListItem>
         ))}
       </List>
