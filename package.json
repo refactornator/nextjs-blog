@@ -9,25 +9,25 @@
     "start": "next start"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@mux/mux-player-react": "^1.10.0",
-    "@vercel/analytics": "^1.0.0",
-    "date-fns": "^2.29.3",
-    "esbuild": "^0.17.17",
-    "framer-motion": "^10.12.4",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mux/mux-player-react": "^1.11.3",
+    "@vercel/analytics": "^1.0.1",
+    "date-fns": "^2.30.0",
+    "esbuild": "^0.18.10",
+    "framer-motion": "^10.12.17",
     "gray-matter": "^4.0.3",
     "mdx-bundler": "^9.2.1",
-    "next": "^13.3.0",
+    "next": "^13.4.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sharp": "^0.32.0"
+    "sharp": "^0.32.1"
   },
   "devDependencies": {
     "@mux/cli": "^0.8.0",
-    "eslint": "8.38.0",
-    "eslint-config-next": "13.3.0",
-    "prettier": "2.8.7"
+    "eslint": "8.43.0",
+    "eslint-config-next": "13.4.7",
+    "prettier": "2.8.8"
   },
   "homepage": "https://refactornator.com",
   "repository": {
