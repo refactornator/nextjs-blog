@@ -6,6 +6,7 @@ import { getMDXComponent } from 'mdx-bundler/client'
 
 import FrontMatter from '../../components/FrontMatter'
 
+import { colors } from '../../utils/styles'
 import { getTopic, getAllTopics } from '../../lib/topics'
 
 const Container = styled.div`
@@ -39,7 +40,7 @@ const Content = styled.article`
   }
 
   a {
-    color: #3e76e9;
+    color: ${colors.snuggles};
   }
 
   p {
