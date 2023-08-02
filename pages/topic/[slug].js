@@ -38,6 +38,10 @@ const Content = styled.article`
     margin-bottom: 1rem;
   }
 
+  a {
+    color: #3e76e9;
+  }
+
   p {
     margin-block-start: 1em;
     margin-block-end: 1em;
