@@ -82,7 +82,7 @@ export default function App({ Component, pageProps }) {
       >
         <BackgroundImage
           priority
-          offset={route.startsWith('/topic')}
+          offset={route.startsWith('/topic') ? true : undefined}
           alt="gradient mesh cloud"
           src={gradientMesh}
         />
